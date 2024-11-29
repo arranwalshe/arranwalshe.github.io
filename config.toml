@@ -1,0 +1,4 @@
+baseURL = 'https://arranwalshe.com'
+languageCode = 'en-us'
+title = 'Arran Robert Walshe'
+theme = "ananke"
