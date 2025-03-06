@@ -1,4 +1,13 @@
-baseURL = 'https://arranwalshe.com'
+baseURL = 'http://example.org/'
 languageCode = 'en-us'
-title = 'Arran Robert Walshe'
-theme = "ananke"
+title = ''
+theme = 'ananke'
+
+[params]
+  custom_css = ["css/custom.css"]
+  body_classes = "bg-black white"
+  site_logo = ""
+  description = ""
+  background_color_class = "bg-black"
+  recent_posts_number = 0
+  footer = ""

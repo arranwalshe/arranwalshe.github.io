@@ -1,0 +1,130 @@
+{{ define "main" }}
+<nav class="pv3 ph3 ph4-ns" role="navigation" style="position: fixed; top: 0; left: 0; right: 0; background-color: black; z-index: 1000;">
+    <div style="position: relative; width: 100%;">
+        <a href="/" class="f3 fw2 hover-white no-underline white-90 dib" style="font-family: 'Montserrat', sans-serif; margin-left: 1rem;">
+            Home
+        </a>
+        <span class="f3 fw2 white-90" style="font-family: 'Montserrat', sans-serif; position: absolute; left: 50%; transform: translateX(-50%); font-size: 1.8em;">
+            Arran Robert Walshe
+        </span>
+    </div>
+</nav>
+<article class="cf ph3 ph5-l f4 tc-l center measure-wide lh-copy" style="text-align: left; margin-left: 2rem; margin-top: -2rem;">
+    <div style="margin-left: 0; padding-top: 0.5rem;">
+        <div class="nested-copy-line-height lh-copy" style="margin-top: -2rem;">
+            <style>
+                h1 { 
+                    color: white !important;
+                    margin-top: -2rem !important;
+                    padding-top: 0 !important;
+                }
+                .subheader-container {
+                    display: flex;
+                    flex-direction: row;
+                    gap: 2rem;
+                    margin: 1rem 0;
+                }
+                h2 { 
+                    color: #9a9a9a !important;
+                    cursor: pointer;
+                    margin: 0 !important;
+                    font-size: 1.1rem;
+                    flex-shrink: 0;
+                    position: relative;
+                    padding-left: 1.2em;
+                }
+                h2:hover {
+                    opacity: 0.8;
+                }
+                h2::before {
+                    content: '▼';
+                    font-size: 0.8em;
+                    position: absolute;
+                    left: 0;
+                    top: 50%;
+                    transform: translateY(-50%);
+                }
+                h2.active::before {
+                    content: '▲';
+                }
+                .collapsible-content {
+                    display: none;
+                    margin-top: 1rem;
+                }
+                .collapsible-content.expanded {
+                    display: block;
+                }
+                .content-sections {
+                    margin-top: 1rem;
+                }
+                /* Only hide original content sections, not the headers */
+                .nested-copy-line-height > *:not(h1):not(.subheader-container):not(.content-sections) {
+                    display: none;
+                }
+            </style>
+            <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                    // Add target="_blank" to all links except the home link
+                    document.querySelectorAll('a').forEach(link => {
+                        if (link.getAttribute('href') !== '/') {
+                            link.setAttribute('target', '_blank');
+                            link.setAttribute('rel', 'noopener noreferrer');  // Security best practice
+                        }
+                    });
+
+                    const content = document.querySelector('.nested-copy-line-height');
+                    const h1 = content.querySelector('h1');
+                    const headers = content.querySelectorAll('h2');
+                    
+                    // Create container for subheaders
+                    const subheaderContainer = document.createElement('div');
+                    subheaderContainer.className = 'subheader-container';
+                    
+                    // Create container for content sections
+                    const contentSections = document.createElement('div');
+                    contentSections.className = 'content-sections';
+                    
+                    // Process each header and its content
+                    headers.forEach(header => {
+                        // Clone header for the horizontal navigation
+                        const headerClone = header.cloneNode(true);
+                        subheaderContainer.appendChild(headerClone);
+                        
+                        // Create content container
+                        const contentDiv = document.createElement('div');
+                        contentDiv.className = 'collapsible-content';
+                        
+                        // Gather content until next header
+                        let nextElement = header.nextElementSibling;
+                        while (nextElement && nextElement.tagName !== 'H2') {
+                            const clone = nextElement.cloneNode(true);
+                            contentDiv.appendChild(clone);
+                            nextElement = nextElement.nextElementSibling;
+                        }
+                        
+                        contentSections.appendChild(contentDiv);
+                        
+                        // Add click handler
+                        headerClone.addEventListener('click', function() {
+                            // Toggle active state on clicked header
+                            const allHeaders = subheaderContainer.querySelectorAll('h2');
+                            allHeaders.forEach(h => h.classList.remove('active'));
+                            this.classList.toggle('active');
+                            
+                            // Toggle content visibility
+                            const allContent = contentSections.querySelectorAll('.collapsible-content');
+                            allContent.forEach(c => c.classList.remove('expanded'));
+                            contentDiv.classList.toggle('expanded');
+                        });
+                    });
+                    
+                    // Insert containers after h1
+                    h1.after(subheaderContainer);
+                    subheaderContainer.after(contentSections);
+                });
+            </script>
+            {{ .Content }}
+        </div>
+    </div>
+</article>
+{{ end }} 
