@@ -1,130 +1,352 @@
 {{ define "main" }}
-<nav class="pv3 ph3 ph4-ns" role="navigation" style="position: fixed; top: 0; left: 0; right: 0; background-color: black; z-index: 1000;">
-    <div style="position: relative; width: 100%;">
-        <a href="/" class="f3 fw2 hover-white no-underline white-90 dib" style="font-family: 'Montserrat', sans-serif; margin-left: 1rem;">
-            Home
-        </a>
-        <span class="f3 fw2 white-90" style="font-family: 'Montserrat', sans-serif; position: absolute; left: 50%; transform: translateX(-50%); font-size: 1.8em;">
-            Arran Robert Walshe
-        </span>
-    </div>
-</nav>
-<article class="cf ph3 ph5-l f4 tc-l center measure-wide lh-copy" style="text-align: left; margin-left: 2rem; margin-top: -2rem;">
-    <div style="margin-left: 0; padding-top: 0.5rem;">
-        <div class="nested-copy-line-height lh-copy" style="margin-top: -2rem;">
-            <style>
-                h1 { 
-                    color: white !important;
-                    margin-top: -2rem !important;
-                    padding-top: 0 !important;
-                }
-                .subheader-container {
-                    display: flex;
-                    flex-direction: row;
-                    gap: 2rem;
-                    margin: 1rem 0;
-                }
-                h2 { 
-                    color: #9a9a9a !important;
-                    cursor: pointer;
-                    margin: 0 !important;
-                    font-size: 1.1rem;
-                    flex-shrink: 0;
-                    position: relative;
-                    padding-left: 1.2em;
-                }
-                h2:hover {
-                    opacity: 0.8;
-                }
-                h2::before {
-                    content: '▼';
-                    font-size: 0.8em;
-                    position: absolute;
-                    left: 0;
-                    top: 50%;
-                    transform: translateY(-50%);
-                }
-                h2.active::before {
-                    content: '▲';
-                }
-                .collapsible-content {
-                    display: none;
-                    margin-top: 1rem;
-                }
-                .collapsible-content.expanded {
-                    display: block;
-                }
-                .content-sections {
-                    margin-top: 1rem;
-                }
-                /* Only hide original content sections, not the headers */
-                .nested-copy-line-height > *:not(h1):not(.subheader-container):not(.content-sections) {
-                    display: none;
-                }
-            </style>
-            <script>
-                document.addEventListener('DOMContentLoaded', function() {
-                    // Add target="_blank" to all links except the home link
-                    document.querySelectorAll('a').forEach(link => {
-                        if (link.getAttribute('href') !== '/') {
-                            link.setAttribute('target', '_blank');
-                            link.setAttribute('rel', 'noopener noreferrer');  // Security best practice
-                        }
-                    });
+<div style="width: 100vw; margin-left: calc(-50vw + 50%); margin-right: calc(-50vw + 50%);">
+    <nav class="pv3" role="navigation" style="position: fixed; top: 0; left: 0; right: 0; background-color: black; z-index: 1000;">
+        <div style="position: relative; width: 100%; display: flex; align-items: center; padding: 0 1rem;">
+            <a href="/" class="f3 fw2 hover-white no-underline white-90" style="font-family: 'Montserrat', sans-serif; font-size: 1.8em;">
+                Home
+            </a>
+            <span class="f3 fw2 white-90" style="font-family: 'Montserrat', sans-serif; position: absolute; left: 50%; transform: translateX(-50%); font-size: 1.8em; font-weight: bold;">
+                Arran Robert Walshe
+            </span>
+        </div>
+    </nav>
+    <div class="publications-container" style="padding-top: 3rem; margin-left: 2rem;">
+        <div class="publications-content" style="width: 100%; padding: 0;">
+            <div class="nested-copy-line-height lh-copy" style="width: 100%; max-width: none; padding: 0;">
+                <style>
+                    body {
+                        margin: 0;
+                        padding: 0;
+                    }
+                    
+                    .publications-container {
+                        width: 100%;
+                        max-width: none;
+                        height: 100vh;
+                        overflow: hidden;
+                        padding-bottom: 0;
+                        display: flex;
+                        flex-direction: column;
+                        position: fixed;
+                        top: 0;
+                        left: 0;
+                        padding-top: 5rem;
+                    }
 
-                    const content = document.querySelector('.nested-copy-line-height');
-                    const h1 = content.querySelector('h1');
-                    const headers = content.querySelectorAll('h2');
+                    .publications-content {
+                        text-align: left;
+                        width: 100%;
+                        flex: 1;
+                        min-height: 0;
+                    }
                     
-                    // Create container for subheaders
-                    const subheaderContainer = document.createElement('div');
-                    subheaderContainer.className = 'subheader-container';
+                    h1 { 
+                        color: white !important;
+                        text-align: left !important;
+                        margin-bottom: 2rem !important;
+                        font-size: 2rem;
+                        position: relative;
+                        left: 0;
+                    }
                     
-                    // Create container for content sections
-                    const contentSections = document.createElement('div');
-                    contentSections.className = 'content-sections';
+                    .outer-container {
+                        display: block;
+                        text-align: left;
+                    }
                     
-                    // Process each header and its content
-                    headers.forEach(header => {
-                        // Clone header for the horizontal navigation
-                        const headerClone = header.cloneNode(true);
-                        subheaderContainer.appendChild(headerClone);
-                        
-                        // Create content container
-                        const contentDiv = document.createElement('div');
-                        contentDiv.className = 'collapsible-content';
-                        
-                        // Gather content until next header
-                        let nextElement = header.nextElementSibling;
-                        while (nextElement && nextElement.tagName !== 'H2') {
-                            const clone = nextElement.cloneNode(true);
-                            contentDiv.appendChild(clone);
-                            nextElement = nextElement.nextElementSibling;
-                        }
-                        
-                        contentSections.appendChild(contentDiv);
-                        
-                        // Add click handler
-                        headerClone.addEventListener('click', function() {
-                            // Toggle active state on clicked header
-                            const allHeaders = subheaderContainer.querySelectorAll('h2');
-                            allHeaders.forEach(h => h.classList.remove('active'));
-                            this.classList.toggle('active');
-                            
-                            // Toggle content visibility
-                            const allContent = contentSections.querySelectorAll('.collapsible-content');
-                            allContent.forEach(c => c.classList.remove('expanded'));
-                            contentDiv.classList.toggle('expanded');
+                    article {
+                        display: block;
+                        text-align: left;
+                    }
+                    
+                    .content-wrapper {
+                        display: block;
+                        text-align: left;
+                    }
+                    
+                    /* Force left alignment for all containers */
+                    article, 
+                    .content-wrapper, 
+                    .nested-copy-line-height,
+                    .measure-wide,
+                    .center {
+                        text-align: left !important;
+                        margin: 0 !important;
+                        padding: 0 !important;
+                        max-width: none !important;
+                        width: 100% !important;
+                    }
+                    
+                    .subheader-container {
+                        display: flex !important;
+                        flex-direction: row !important;
+                        justify-content: flex-start;
+                        gap: 2rem;
+                        margin: 0 0;
+                        text-align: left;
+                        position: relative;
+                        z-index: 1;
+                    }
+                    
+                    .subheader-container h2 {
+                        display: inline-block;
+                        color: #9a9a9a !important;
+                        cursor: pointer;
+                        margin: 0 2rem 0 0 !important;
+                        font-size: 1.1rem;
+                        position: relative;
+                        padding-left: 1.2em;
+                        text-align: left;
+                    }
+                    
+                    h2:hover {
+                        opacity: 0.8;
+                    }
+                    
+                    h2::before {
+                        content: '▲';
+                        font-size: 0.8em;
+                        position: absolute;
+                        left: 0;
+                        top: 50%;
+                        transform: translateY(-50%);
+                    }
+                    
+                    h2.active::before {
+                        content: '▼';
+                    }
+                    
+                    .content-sections {
+                        margin-top: 0.5rem;
+                        position: relative;
+                        z-index: 1;
+                        max-width: 700px;
+                        overflow-y: auto;
+                        height: calc(100vh - 11rem);
+                        padding-bottom: 4rem;
+                    }
+                    
+                    .collapsible-content {
+                        position: relative;
+                        display: none;
+                        padding-top: 0.25rem;
+                        padding-bottom: 2rem;
+                        text-align: left;
+                        width: 100%;
+                        max-width: 700px;
+                    }
+                    
+                    .collapsible-content.expanded {
+                        display: block;
+                        height: auto;
+                        overflow-y: visible;
+                    }
+                    
+                    /* When any content is expanded, allow container to scroll */
+                    .has-expanded-content {
+                        overflow-y: auto !important;
+                    }
+                    
+                    /* First hide all direct children of nested-copy-line-height */
+                    .nested-copy-line-height > h2,
+                    .nested-copy-line-height > p {
+                        display: none;
+                    }
+                    
+                    /* Show and style the first h1 */
+                    .nested-copy-line-height > h1:first-of-type {
+                        display: block;
+                        color: white !important;
+                        text-align: left !important;
+                        margin-bottom: 1rem !important;
+                        font-size: 2rem;
+                        position: relative;
+                        left: 0;
+                    }
+                    
+                    /* Always show the containers */
+                    .subheader-container,
+                    .content-sections {
+                        display: block !important;
+                        position: relative;
+                    }
+                    
+                    /* Ensure content doesn't cause layout shifts */
+                    .content-sections {
+                        min-height: 200px;
+                        position: relative;
+                    }
+                    
+                    .collapsible-content p {
+                        display: block;
+                        margin: 0.5rem 0;
+                        line-height: 1.5;
+                        max-width: 700px;
+                    }
+                    
+                    .collapsible-content p a {
+                        display: inline;
+                        margin-left: 0.25em;
+                        color: #3b82f6;
+                        text-decoration: none;
+                    }
+                    
+                    .collapsible-content p a:hover {
+                        opacity: 0.8;
+                    }
+                    
+                    /* Create a wrapper for the text and link */
+                    .entry-line {
+                        display: flex;
+                        flex-wrap: nowrap;
+                        align-items: baseline;
+                        gap: 0.25em;
+                        width: 100%;
+                    }
+                    
+                    .entry-text {
+                        flex: 1;
+                        min-width: 0;
+                    }
+                    
+                    .entry-link {
+                        color: #3b82f6 !important;
+                        text-decoration: none;
+                        flex-shrink: 0;
+                    }
+                    
+                    .entry-link:hover {
+                        opacity: 0.8;
+                    }
+                    
+                    /* Hide any automatically generated title */
+                    .page-title,
+                    .post-title,
+                    .title {
+                        display: none !important;
+                    }
+                    
+                    /* Remove any potential float or positioning that might affect layout */
+                    .nested-copy-line-height > * {
+                        clear: both;
+                    }
+                    
+                    .entry-wrapper,
+                    .entry-text,
+                    .entry-link {
+                        display: block;
+                    }
+                    
+                    /* Make the header and subheaders section fixed */
+                    .header-section {
+                        position: sticky;
+                        top: 0;
+                        background-color: black;
+                        z-index: 2;
+                        padding-bottom: 0.25rem;
+                        margin-bottom: 0.25rem;
+                        width: 700px;
+                    }
+                </style>
+                <script>
+                    document.addEventListener('DOMContentLoaded', function() {
+                        // Add target="_blank" to all links except the home link and publications link
+                        document.querySelectorAll('a').forEach(link => {
+                            const href = link.getAttribute('href');
+                            if (href !== '/' && href !== '/publications') {
+                                link.setAttribute('target', '_blank');
+                                link.setAttribute('rel', 'noopener noreferrer');
+                            }
                         });
+
+                        const content = document.querySelector('.nested-copy-line-height');
+                        const h1 = content.querySelector('h1');  // Define h1 here
+                        const headers = Array.from(content.querySelectorAll('h2')).slice(0, 3);
+                        
+                        // Create containers
+                        const headerSection = document.createElement('div');  // Move this up
+                        headerSection.className = 'header-section';
+                        
+                        const subheaderContainer = document.createElement('div');
+                        subheaderContainer.className = 'subheader-container';
+                        
+                        const contentSections = document.createElement('div');
+                        contentSections.className = 'content-sections';
+                        
+                        // Process headers and content...
+                        headers.forEach(header => {
+                            const headerClone = header.cloneNode(true);
+                            subheaderContainer.appendChild(headerClone);
+                            
+                            const contentDiv = document.createElement('div');
+                            contentDiv.className = 'collapsible-content';
+                            
+                            let nextElement = header.nextElementSibling;
+                            while (nextElement && nextElement.tagName !== 'H2') {
+                                if (nextElement.tagName !== 'H1') {
+                                    // Create a wrapper for each entry
+                                    if (nextElement.tagName === 'P') {
+                                        const text = nextElement.innerHTML;
+                                        const linkMatch = text.match(/\[\[link\]\]\((.*?)\)/);
+                                        
+                                        if (linkMatch) {
+                                            const mainText = text.substring(0, text.indexOf('[[link]]'));
+                                            const url = linkMatch[1];
+                                            
+                                            const p = document.createElement('p');
+                                            p.innerHTML = `${mainText}<a href="${url}" style="display: inline; margin-left: 0.25em; color: #3b82f6;">[link]</a>`;
+                                            contentDiv.appendChild(p);
+                                        } else {
+                                            contentDiv.appendChild(nextElement.cloneNode(true));
+                                        }
+                                    } else {
+                                        contentDiv.appendChild(nextElement.cloneNode(true));
+                                    }
+                                }
+                                nextElement = nextElement.nextElementSibling;
+                            }
+                            
+                            contentSections.appendChild(contentDiv);
+                            
+                            headerClone.addEventListener('click', function() {
+                                const allHeaders = subheaderContainer.querySelectorAll('h2');
+                                const wasActive = this.classList.contains('active');  // Check if it was already active
+                                
+                                // Remove active class from all headers
+                                allHeaders.forEach(h => h.classList.remove('active'));
+                                
+                                // Remove expanded class from all content sections
+                                const allContent = contentSections.querySelectorAll('.collapsible-content');
+                                allContent.forEach(c => c.classList.remove('expanded'));
+                                
+                                // Only toggle on if it wasn't already active
+                                if (!wasActive) {
+                                    this.classList.add('active');
+                                    contentDiv.classList.add('expanded');
+                                }
+                            });
+                        });
+                        
+                        // Insert the content in the correct order
+                        if (h1) {
+                            headerSection.appendChild(h1.cloneNode(true));
+                            headerSection.appendChild(subheaderContainer);
+                            h1.parentNode.insertBefore(headerSection, h1);
+                            
+                            // Add the image after the header section
+                            const imageContainer = document.createElement('div');
+                            imageContainer.style.cssText = 'position: absolute; right: 8rem; top: 5rem; z-index: 1;';
+                            imageContainer.innerHTML = '<img src="/images/publications1.jpg" alt="Publications Photo" style="width: 600px;">';
+                            h1.parentNode.insertBefore(imageContainer, headerSection.nextSibling);
+                            
+                            h1.parentNode.insertBefore(contentSections, headerSection.nextSibling);
+                            h1.remove();
+                        }
                     });
-                    
-                    // Insert containers after h1
-                    h1.after(subheaderContainer);
-                    subheaderContainer.after(contentSections);
-                });
-            </script>
-            {{ .Content }}
+                </script>
+                {{ .Content }}
+            </div>
         </div>
     </div>
-</article>
+</div>
 {{ end }} 

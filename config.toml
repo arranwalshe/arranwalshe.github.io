@@ -1,8 +1,8 @@
-<<<<<<< HEAD
-baseURL = 'http://example.org/'
-languageCode = 'en-us'
-title = ''
-theme = 'ananke'
+baseURL = "https://arranwalshe.com"
+languageCode = "en-us"
+title = ""
+theme = "ananke"
+disableKinds = ["taxonomy", "term", "RSS", "sitemap", "robotsTXT"]
 
 [params]
   custom_css = ["css/custom.css"]
@@ -12,18 +12,7 @@ theme = 'ananke'
   background_color_class = "bg-black"
   recent_posts_number = 0
   footer = ""
-=======
-baseURL = "https://arranwalshe.com"
-languageCode = "en-us"
-title = "Arran Walshe"
-theme = "ananke"
-disableKinds = ["taxonomy", "term", "RSS", "sitemap", "robotsTXT"]
-
-[params]
-  description = "Academic & Researcher"
-  custom_css = ["/custom.css"]
   mainSections = []  # This removes the posts listing
-  body_classes = "sans-serif bg-white"
   post_content_classes = "sans-serif"
   
 [markup.goldmark.renderer]
@@ -31,4 +20,3 @@ disableKinds = ["taxonomy", "term", "RSS", "sitemap", "robotsTXT"]
 
 [menu]
   # Removing default menu items by not defining them
->>>>>>> ee9418652b7328595503d8123bd4b261f82fb8cd

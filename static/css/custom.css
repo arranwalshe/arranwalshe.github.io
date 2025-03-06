@@ -4,6 +4,13 @@ body {
   background-color: black;
   color: white;
   font-family: 'Montserrat', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
 }
 
 .home-header {
@@ -45,10 +52,32 @@ body {
 
 /* Publications page styling */
 .content {
-  text-align: left;
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 4rem 2rem;
+  text-align: center;
+  padding: 2rem;
+}
+
+/* Main page styling */
+.content h1 {
+  display: none;  /* Hide the title since we have it in the content */
+}
+
+.content p:first-of-type {
+  font-size: 2rem;
+  font-weight: 300;
+  margin-bottom: 3rem;
+}
+
+.content a {
+  color: white;
+  text-decoration: none;
+  display: block;
+  margin: 1.5rem 0;
+  font-size: 1.2rem;
+  transition: opacity 0.2s;
+}
+
+.content a:hover {
+  opacity: 0.8;
 }
 
 /* Specifically target the publications headings and content */
@@ -75,10 +104,6 @@ footer[role="contentinfo"],
 .ananke-socials,
 .bottom-0 {
   display: none !important;
-  visibility: hidden !important;
-  height: 0 !important;
-  padding: 0 !important;
-  margin: 0 !important;
 }
 
 /* Add these specific overrides for the publications page */
@@ -116,4 +141,15 @@ footer[role="contentinfo"],
 .subheading {
   color: #9a9a9a;
   text-align: left !important;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+  display: block;
+  margin: 10px 0;
+}
+
+a:hover {
+  opacity: 0.8;
 } 
