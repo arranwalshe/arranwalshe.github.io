@@ -1,12 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on Arran Robert Walshe</title>
+    <title>Posts on Arran Walshe</title>
     <link>http://localhost:1313/posts/</link>
-    <description>Recent content in Posts on Arran Robert Walshe</description>
+    <description>Recent content in Posts on Arran Walshe</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate></lastBuildDate>
+    <lastBuildDate>Thu, 28 Nov 2024 18:53:44 -0800</lastBuildDate>
     <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Arran is Awesome</title>
+      <link>http://localhost:1313/posts/my-first-post/</link>
+      <pubDate>Thu, 28 Nov 2024 18:53:44 -0800</pubDate>
+      <guid>http://localhost:1313/posts/my-first-post/</guid>
+      <description>&lt;h2 id=&#34;double-downing-on-the-arran-being-awesome&#34;&gt;Double Downing on the ARRAN BEING AWESOME&lt;/h2&gt;&#xA;&lt;p&gt;&lt;em&gt;Baby&amp;rsquo;s&lt;/em&gt; first &lt;strong&gt;post&lt;/strong&gt; is this!&lt;/p&gt;&#xA;&lt;p&gt;From here I can hyperlink my &lt;a href=&#34;https://www.instagram.com/abobwalshe/?hl=en&#34;&gt;instagram&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
   </channel>
 </rss>
