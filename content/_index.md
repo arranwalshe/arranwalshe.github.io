@@ -3,6 +3,10 @@ title = ""
 date = '2024-11-28T18:53:44-08:00'
 +++
 
+<div style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -1;">
+  <img src="/images/frontpage.jpg" alt="Background" style="width: 100%; height: 100%; object-fit: cover;">
+</div>
+
 <div class="home-header">
 <div class="main-name">
 Arran Robert Walshe
