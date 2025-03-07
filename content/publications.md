@@ -122,6 +122,6 @@ layout: publications
 
 ## Other Writing
 
-"Water Be a String" in *Is al-Andalus a Place or a Poem?* Edited & Illustrated by Molly Crabapple. New York University. NY, New York [[link]](https://nyuad.nyu.edu/en/research/faculty-labs-and-projects/is-al-andalus-a-place-or-a-poem.html)
+"Water Be a String" in *Is al-Andalus a Place or a Poem?* Edited & Illustrated by Molly Crabapple. New York University. NY, New York [[link]](/docs/water.pdf)
 
 "The Mango Juice is a Needle, and We're the Thread; or, the Non-Transactional Ethics of Iraqi Karam." *Globally Rooted Magazine*. Issue 2, May 2023 [[link]](https://globallyrooted.com/arran-walshe-the-mango-juice-is-a-needle-and-we-are-the-thread)
