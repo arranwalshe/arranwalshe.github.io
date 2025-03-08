@@ -1,352 +1,175 @@
 {{ define "main" }}
 <div style="width: 100vw; margin-left: calc(-50vw + 50%); margin-right: calc(-50vw + 50%);">
-    <nav class="pv3" role="navigation" style="position: fixed; top: 0; left: 0; right: 0; background-color: black; z-index: 1000;">
+    <div style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -1;">
+        <img src="/images/publications3.jpg" alt="Background" style="width: 100%; height: 100%; object-fit: cover;">
+    </div>
+    <nav role="navigation" style="position: fixed; top: 0; left: 0; right: 0; background-color: transparent; z-index: 1000; padding: 0.25rem 0;">
         <div style="position: relative; width: 100%; display: flex; align-items: center; padding: 0 1rem;">
             <a href="/" class="f3 fw2 hover-white no-underline white-90" style="font-family: 'Montserrat', sans-serif; font-size: 1.5em;">
                 Home
             </a>
             <span class="f3 fw2 white-90" style="font-family: 'Montserrat', sans-serif; position: absolute; left: 50%; transform: translateX(-50%); font-size: 1.8em;">
-                Arran Robert Walshe
+                Writing
             </span>
         </div>
     </nav>
-    <div class="publications-container" style="padding-top: 3rem; margin-left: 2rem;">
-        <div class="publications-content" style="width: 100%; padding: 0;">
-            <div class="nested-copy-line-height lh-copy" style="width: 100%; max-width: none; padding: 0;">
-                <style>
-                    body {
-                        margin: 0;
-                        padding: 0;
-                    }
-                    
-                    .publications-container {
-                        width: 100%;
-                        max-width: none;
-                        height: 100vh;
-                        overflow: hidden;
-                        padding-bottom: 0;
-                        display: flex;
-                        flex-direction: column;
-                        position: fixed;
-                        top: 0;
-                        left: 0;
-                        padding-top: 5rem;
-                    }
-
-                    .publications-content {
-                        text-align: left;
-                        width: 100%;
-                        flex: 1;
-                        min-height: 0;
-                    }
-                    
-                    h1 { 
-                        color: white !important;
-                        text-align: left !important;
-                        margin-bottom: 2rem !important;
-                        font-size: 2rem;
-                        position: relative;
-                        left: 0;
-                    }
-                    
-                    .outer-container {
-                        display: block;
-                        text-align: left;
-                    }
-                    
-                    article {
-                        display: block;
-                        text-align: left;
-                    }
-                    
-                    .content-wrapper {
-                        display: block;
-                        text-align: left;
-                    }
-                    
-                    /* Force left alignment for all containers */
-                    article, 
-                    .content-wrapper, 
-                    .nested-copy-line-height,
-                    .measure-wide,
-                    .center {
-                        text-align: left !important;
-                        margin: 0 !important;
-                        padding: 0 !important;
-                        max-width: none !important;
-                        width: 100% !important;
-                    }
-                    
-                    .subheader-container {
-                        display: flex !important;
-                        flex-direction: row !important;
-                        justify-content: flex-start;
-                        gap: 2rem;
-                        margin: 0 0;
-                        text-align: left;
-                        position: relative;
-                        z-index: 1;
-                    }
-                    
-                    .subheader-container h2 {
-                        display: inline-block;
-                        color: #9a9a9a !important;
-                        cursor: pointer;
-                        margin: 0 2rem 0 0 !important;
-                        font-size: 1.1rem;
-                        position: relative;
-                        padding-left: 1.2em;
-                        text-align: left;
-                    }
-                    
-                    h2:hover {
-                        opacity: 0.8;
-                    }
-                    
-                    h2::before {
-                        content: '▲';
-                        font-size: 0.8em;
-                        position: absolute;
-                        left: 0;
-                        top: 50%;
-                        transform: translateY(-50%);
-                    }
-                    
-                    h2.active::before {
-                        content: '▼';
-                    }
-                    
-                    .content-sections {
-                        margin-top: 0.5rem;
-                        position: relative;
-                        z-index: 1;
-                        max-width: 700px;
-                        overflow-y: auto;
-                        height: calc(100vh - 11rem);
-                        padding-bottom: 4rem;
-                    }
-                    
-                    .collapsible-content {
-                        position: relative;
-                        display: none;
-                        padding-top: 0.25rem;
-                        padding-bottom: 2rem;
-                        text-align: left;
-                        width: 100%;
-                        max-width: 700px;
-                    }
-                    
-                    .collapsible-content.expanded {
-                        display: block;
-                        height: auto;
-                        overflow-y: visible;
-                    }
-                    
-                    /* When any content is expanded, allow container to scroll */
-                    .has-expanded-content {
-                        overflow-y: auto !important;
-                    }
-                    
-                    /* First hide all direct children of nested-copy-line-height */
-                    .nested-copy-line-height > h2,
-                    .nested-copy-line-height > p {
-                        display: none;
-                    }
-                    
-                    /* Show and style the first h1 */
-                    .nested-copy-line-height > h1:first-of-type {
-                        display: block;
-                        color: white !important;
-                        text-align: left !important;
-                        margin-bottom: 1rem !important;
-                        font-size: 2rem;
-                        position: relative;
-                        left: 0;
-                    }
-                    
-                    /* Always show the containers */
-                    .subheader-container,
-                    .content-sections {
-                        display: block !important;
-                        position: relative;
-                    }
-                    
-                    /* Ensure content doesn't cause layout shifts */
-                    .content-sections {
-                        min-height: 200px;
-                        position: relative;
-                    }
-                    
-                    .collapsible-content p {
-                        display: block;
-                        margin: 0.5rem 0;
-                        line-height: 1.5;
-                        max-width: 700px;
-                    }
-                    
-                    .collapsible-content p a {
-                        display: inline;
-                        margin-left: 0.25em;
-                        color: #3b82f6;
-                        text-decoration: none;
-                    }
-                    
-                    .collapsible-content p a:hover {
-                        opacity: 0.8;
-                    }
-                    
-                    /* Create a wrapper for the text and link */
-                    .entry-line {
-                        display: flex;
-                        flex-wrap: nowrap;
-                        align-items: baseline;
-                        gap: 0.25em;
-                        width: 100%;
-                    }
-                    
-                    .entry-text {
-                        flex: 1;
-                        min-width: 0;
-                    }
-                    
-                    .entry-link {
-                        color: #3b82f6 !important;
-                        text-decoration: none;
-                        flex-shrink: 0;
-                    }
-                    
-                    .entry-link:hover {
-                        opacity: 0.8;
-                    }
-                    
-                    /* Hide any automatically generated title */
-                    .page-title,
-                    .post-title,
-                    .title {
-                        display: none !important;
-                    }
-                    
-                    /* Remove any potential float or positioning that might affect layout */
-                    .nested-copy-line-height > * {
-                        clear: both;
-                    }
-                    
-                    .entry-wrapper,
-                    .entry-text,
-                    .entry-link {
-                        display: block;
-                    }
-                    
-                    /* Make the header and subheaders section fixed */
-                    .header-section {
-                        position: sticky;
-                        top: 0;
-                        background-color: black;
-                        z-index: 2;
-                        padding-bottom: 0.25rem;
-                        margin-bottom: 0.25rem;
-                        width: 700px;
-                    }
-                </style>
-                <script>
-                    document.addEventListener('DOMContentLoaded', function() {
-                        // Add target="_blank" to all links except the home link and publications link
-                        document.querySelectorAll('a').forEach(link => {
-                            const href = link.getAttribute('href');
-                            if (href !== '/' && href !== '/publications') {
-                                link.setAttribute('target', '_blank');
-                                link.setAttribute('rel', 'noopener noreferrer');
-                            }
-                        });
-
-                        const content = document.querySelector('.nested-copy-line-height');
-                        const h1 = content.querySelector('h1');  // Define h1 here
-                        const headers = Array.from(content.querySelectorAll('h2')).slice(0, 3);
-                        
-                        // Create containers
-                        const headerSection = document.createElement('div');  // Move this up
-                        headerSection.className = 'header-section';
-                        
-                        const subheaderContainer = document.createElement('div');
-                        subheaderContainer.className = 'subheader-container';
-                        
-                        const contentSections = document.createElement('div');
-                        contentSections.className = 'content-sections';
-                        
-                        // Process headers and content...
-                        headers.forEach(header => {
-                            const headerClone = header.cloneNode(true);
-                            subheaderContainer.appendChild(headerClone);
-                            
-                            const contentDiv = document.createElement('div');
-                            contentDiv.className = 'collapsible-content';
-                            
-                            let nextElement = header.nextElementSibling;
-                            while (nextElement && nextElement.tagName !== 'H2') {
-                                if (nextElement.tagName !== 'H1') {
-                                    // Create a wrapper for each entry
-                                    if (nextElement.tagName === 'P') {
-                                        const text = nextElement.innerHTML;
-                                        const linkMatch = text.match(/\[\[link\]\]\((.*?)\)/);
-                                        
-                                        if (linkMatch) {
-                                            const mainText = text.substring(0, text.indexOf('[[link]]'));
-                                            const url = linkMatch[1];
-                                            
-                                            const p = document.createElement('p');
-                                            p.innerHTML = `${mainText}<a href="${url}" style="display: inline; margin-left: 0.25em; color: #3b82f6;">[link]</a>`;
-                                            contentDiv.appendChild(p);
-                                        } else {
-                                            contentDiv.appendChild(nextElement.cloneNode(true));
-                                        }
-                                    } else {
-                                        contentDiv.appendChild(nextElement.cloneNode(true));
-                                    }
-                                }
-                                nextElement = nextElement.nextElementSibling;
-                            }
-                            
-                            contentSections.appendChild(contentDiv);
-                            
-                            headerClone.addEventListener('click', function() {
-                                const allHeaders = subheaderContainer.querySelectorAll('h2');
-                                const wasActive = this.classList.contains('active');  // Check if it was already active
-                                
-                                // Remove active class from all headers
-                                allHeaders.forEach(h => h.classList.remove('active'));
-                                
-                                // Remove expanded class from all content sections
-                                const allContent = contentSections.querySelectorAll('.collapsible-content');
-                                allContent.forEach(c => c.classList.remove('expanded'));
-                                
-                                // Only toggle on if it wasn't already active
-                                if (!wasActive) {
-                                    this.classList.add('active');
-                                    contentDiv.classList.add('expanded');
-                                }
-                            });
-                        });
-                        
-                        // Insert the content in the correct order
-                        if (h1) {
-                            headerSection.appendChild(h1.cloneNode(true));
-                            headerSection.appendChild(subheaderContainer);
-                            h1.parentNode.insertBefore(headerSection, h1);
-                            
-                            // Add the image after the header section
-                            const imageContainer = document.createElement('div');
-                            imageContainer.style.cssText = 'position: absolute; right: 15rem; top: 5rem; z-index: 1;';
-                            imageContainer.innerHTML = '<img src="/images/publications2.jpg" alt="Publications Photo" style="width: 500px;">';
-                            h1.parentNode.insertBefore(imageContainer, headerSection.nextSibling);
-                            
-                            h1.parentNode.insertBefore(contentSections, headerSection.nextSibling);
-                            h1.remove();
-                        }
-                    });
-                </script>
+    <div class="publications-container" style="margin-top: -22.5rem; width: 100%; display: flex; justify-content: flex-start; padding-left: 4rem;">
+        <div class="publications-content" style="width: 900px; padding: 0; display: flex; flex-direction: column; align-items: flex-start;">
+            <div class="subheader-container" style="display: flex; gap: 4rem; margin-bottom: 2rem;">
+                <div class="header-section">
+                    <h2 style="color: white; font-size: 1.4rem; cursor: pointer;">Policy & Journalism</h2>
+                </div>
+                <div class="header-section">
+                    <h2 style="color: white; font-size: 1.4rem; cursor: pointer;">Book Chapters</h2>
+                </div>
+                <div class="header-section">
+                    <h2 style="color: white; font-size: 1.4rem; cursor: pointer;">Other Writing</h2>
+                </div>
+            </div>
+            <div class="content-sections" style="width: 100%;">
                 {{ .Content }}
             </div>
         </div>
     </div>
 </div>
+
+<style>
+    /* Add this to hide the original content */
+    .content-sections > h2,
+    .content-sections > p {
+        display: none;
+    }
+
+    .subheader-container {
+        display: flex;
+        justify-content: flex-start;
+        gap: 4rem;
+        margin-bottom: 2rem;
+        padding-top: 0;
+        margin-top: 0;
+        position: relative;
+    }
+
+    .subheader-container h2 {
+        color: white;
+        font-size: 1.4rem;
+        cursor: pointer;
+        position: relative;
+        padding-left: 1.2em;
+    }
+
+    .subheader-container h2::before {
+        content: '▲';
+        font-size: 0.8em;
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .subheader-container h2.active::before {
+        content: '▼';
+    }
+
+    .header-section {
+        position: static;
+    }
+
+    .collapsible-content {
+        display: none;
+        padding: 1rem 0;
+        color: white;
+        font-size: 1.2rem;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        margin-top: 0.25rem;
+        text-align: left;
+        max-width: 900px;
+    }
+
+    .collapsible-content.expanded {
+        display: block;
+    }
+
+    .collapsible-content p {
+        margin: 0.5rem 0;
+        white-space: normal;
+        overflow-wrap: break-word;
+    }
+
+    .collapsible-content a {
+        color: #3b82f6 !important;
+        text-decoration: none;
+        display: inline;
+        margin-left: 0.5em;
+        white-space: nowrap;
+    }
+
+    .collapsible-content a:hover {
+        opacity: 0.8;
+    }
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Add target="_blank" to all links except the home link
+        document.querySelectorAll('a').forEach(link => {
+            const href = link.getAttribute('href');
+            if (href !== '/') {
+                link.setAttribute('target', '_blank');
+                link.setAttribute('rel', 'noopener noreferrer');
+            }
+        });
+
+        const content = document.querySelector('.content-sections');
+        const headers = Array.from(document.querySelectorAll('.subheader-container h2'));
+        const sections = Array.from(content.querySelectorAll('h2')).slice(0, 3);
+        
+        // Process headers and content
+        sections.forEach((section, index) => {
+            const contentDiv = document.createElement('div');
+            contentDiv.className = 'collapsible-content';
+            
+            let nextElement = section.nextElementSibling;
+            while (nextElement && nextElement.tagName !== 'H2') {
+                contentDiv.appendChild(nextElement.cloneNode(true));
+                nextElement = nextElement.nextElementSibling;
+            }
+            
+            // Add click handler to header
+            headers[index].addEventListener('click', function() {
+                const wasActive = this.classList.contains('active');
+                
+                // Remove active class from all headers
+                headers.forEach(h => h.classList.remove('active'));
+                
+                // Hide all content sections
+                document.querySelectorAll('.collapsible-content').forEach(c => {
+                    c.classList.remove('expanded');
+                });
+                
+                // Toggle this section if it wasn't active
+                if (!wasActive) {
+                    this.classList.add('active');
+                    contentDiv.classList.add('expanded');
+                }
+            });
+
+            // Add content after corresponding header
+            headers[index].after(contentDiv);
+        });
+
+        // Hide original content
+        sections.forEach(section => {
+            let nextElement = section;
+            while (nextElement && nextElement.tagName !== 'H2') {
+                const temp = nextElement.nextElementSibling;
+                nextElement.remove();
+                nextElement = temp;
+            }
+        });
+    });
+</script>
 {{ end }} 
