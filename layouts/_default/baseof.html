@@ -9,7 +9,6 @@
     <title>{{ block "title" . }}{{ with .Params.Title }}{{ . }} | {{ end }}{{ .Site.Title }}{{ end }}</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     {{ hugo.Generator }}
-    {{ partialCached "head-additions.html" . }}
     {{ template "_internal/opengraph.html" . }}
     {{ if .Site.Params.favicon }}
     <link rel="shortcut icon" href="{{ .Site.Params.favicon }}" type="image/x-icon" />
@@ -25,4 +24,4 @@
       {{ block "main" . }}{{ end }}
     </main>
   </body>
-</html> 
+</html>
