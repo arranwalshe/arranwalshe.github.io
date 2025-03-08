@@ -14,7 +14,7 @@ Arran Robert Walshe
 
 <div style="font-size: 1.3rem;">
 <a href="/bio">Bio</a>
-<a href="/publications">Publications</a>
+<a href="/publications">Writing</a>
 <a href="https://www.instagram.com/abobwalshe/?hl=en" target="_blank">Photography</a>
 <a href="/docs/cv.pdf" target="_blank">CV</a>
 </div>

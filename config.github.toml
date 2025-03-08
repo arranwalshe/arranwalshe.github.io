@@ -1,0 +1,21 @@
+baseURL = "https://www.arranwalshe.com"
+languageCode = "en-us"
+title = ""
+theme = "ananke"
+disableKinds = ["taxonomy", "term", "RSS", "sitemap", "robotsTXT"]
+
+[params]
+  custom_css = ["css/custom.css"]
+  body_classes = "bg-black white"
+  site_logo = ""
+  description = ""
+  background_color_class = "bg-black"
+  recent_posts_number = 0
+  footer = ""
+  mainSections = []
+  post_content_classes = "sans-serif"
+  
+[markup.goldmark.renderer]
+  unsafe = true
+
+[menu] 

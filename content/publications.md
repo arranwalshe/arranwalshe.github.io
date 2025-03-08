@@ -4,8 +4,6 @@ type: page
 layout: publications
 ---
 
-# Publications
-
 ## Policy & Journalism
 
 "Multi-ethnic Kirkuk rocked by clashes as Kurdish farmers claim land ownership." *Amwaj.media*. Feb. 25, 2025 [[link]](https://amwaj.media/media-monitor/multi-ethnic-kirkuk-rocked-by-clashes-as-kurdish-farmers-claim-land-ownership)
