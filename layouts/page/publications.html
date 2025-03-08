@@ -25,4 +25,148 @@
         </div>
     </div>
 </div>
+<<<<<<< HEAD
 {{ end }}
+=======
+
+<style>
+    /* Add this to hide the original content */
+    .content-sections > h2,
+    .content-sections > p {
+        display: none;
+    }
+
+    .subheader-container {
+        display: flex;
+        justify-content: flex-start;
+        gap: 4rem;
+        margin-bottom: 2rem;
+        padding-top: 0;
+        margin-top: 0;
+        position: relative;
+    }
+
+    .subheader-container h2 {
+        color: white;
+        font-size: 1.4rem;
+        cursor: pointer;
+        position: relative;
+        padding-left: 1.2em;
+    }
+
+    .subheader-container h2::before {
+        content: '▲';
+        font-size: 0.8em;
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .subheader-container h2.active::before {
+        content: '▼';
+    }
+
+    .header-section {
+        position: static;
+    }
+
+    .collapsible-content {
+        display: none;
+        padding: 1rem 0;
+        color: white;
+        font-size: 1.2rem;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        margin-top: 0.25rem;
+        text-align: left;
+        max-width: 900px;
+    }
+
+    .collapsible-content.expanded {
+        display: block;
+    }
+
+    .collapsible-content p {
+        margin: 0.5rem 0;
+        white-space: normal;
+        overflow-wrap: break-word;
+    }
+
+    .collapsible-content a {
+        color: #3b82f6 !important;
+        text-decoration: none;
+        display: inline;
+        margin-left: 0.5em;
+        white-space: nowrap;
+    }
+
+    .collapsible-content a:hover {
+        opacity: 0.8;
+    }
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Add target="_blank" to all links except the home link
+        document.querySelectorAll('a').forEach(link => {
+            const href = link.getAttribute('href');
+            if (href !== '/') {
+                link.setAttribute('target', '_blank');
+                link.setAttribute('rel', 'noopener noreferrer');
+            }
+        });
+
+        const content = document.querySelector('.content-sections');
+        const headers = Array.from(document.querySelectorAll('.subheader-container h2'));
+        const sections = Array.from(content.querySelectorAll('h2')).slice(0, 3);
+        
+        // Process headers and content
+        sections.forEach((section, index) => {
+            const contentDiv = document.createElement('div');
+            contentDiv.className = 'collapsible-content';
+            
+            let nextElement = section.nextElementSibling;
+            while (nextElement && nextElement.tagName !== 'H2') {
+                contentDiv.appendChild(nextElement.cloneNode(true));
+                nextElement = nextElement.nextElementSibling;
+            }
+            
+            // Add click handler to header
+            headers[index].addEventListener('click', function() {
+                const wasActive = this.classList.contains('active');
+                
+                // Remove active class from all headers
+                headers.forEach(h => h.classList.remove('active'));
+                
+                // Hide all content sections
+                document.querySelectorAll('.collapsible-content').forEach(c => {
+                    c.classList.remove('expanded');
+                });
+                
+                // Toggle this section if it wasn't active
+                if (!wasActive) {
+                    this.classList.add('active');
+                    contentDiv.classList.add('expanded');
+                }
+            });
+
+            // Add content after corresponding header
+            headers[index].after(contentDiv);
+        });
+
+        // Hide original content
+        sections.forEach(section => {
+            let nextElement = section;
+            while (nextElement && nextElement.tagName !== 'H2') {
+                const temp = nextElement.nextElementSibling;
+                nextElement.remove();
+                nextElement = temp;
+            }
+        });
+    });
+</script>
+{{ end }} 
+>>>>>>> d50ab5680a01814204c20cb6f31de75821863ace

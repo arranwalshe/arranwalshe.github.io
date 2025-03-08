@@ -2,6 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
+<<<<<<< HEAD
     <title>{{ .Title }}</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
@@ -14,9 +15,31 @@
             min-height: 100vh;
         }
     </style>
+=======
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https: 'unsafe-inline';">
+    <meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <title>{{ block "title" . }}{{ with .Params.Title }}{{ . }} | {{ end }}{{ .Site.Title }}{{ end }}</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    {{ hugo.Generator }}
+    {{ template "_internal/opengraph.html" . }}
+    {{ if .Site.Params.favicon }}
+    <link rel="shortcut icon" href="{{ .Site.Params.favicon }}" type="image/x-icon" />
+    {{ end }}
+    {{ $stylesheet := .Site.Data.webpack_assets.app }}
+    {{ with $stylesheet.css }}
+    <link href="{{ relURL . }}" rel="stylesheet">
+    {{ end }}
+    <link rel="stylesheet" href="/css/custom.css">
+>>>>>>> d50ab5680a01814204c20cb6f31de75821863ace
   </head>
   <body>
     <!-- DEBUG: Using baseof.html template -->
     {{ block "main" . }}{{ end }}
   </body>
+<<<<<<< HEAD
 </html>
+=======
+</html>
+>>>>>>> d50ab5680a01814204c20cb6f31de75821863ace
