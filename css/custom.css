@@ -16,6 +16,9 @@ body {
 .home-header {
   text-align: center;
   padding: 4rem 0;
+  z-index: 1;
+  position: relative;
+  color: white;
 }
 
 .main-name {
@@ -23,31 +26,34 @@ body {
   font-weight: 300;
   margin-bottom: 2rem;
   font-family: 'Montserrat', sans-serif;
+  color: white;
 }
 
 .main-name p:first-child {
   margin-bottom: 2rem;
 }
 
-/* Target the paragraph containing the links */
-.home-header p:last-child {
-  font-size: 1.1rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-  font-family: 'Montserrat', sans-serif;
-}
-
-/* Style the links themselves */
-.home-header p:last-child a {
-  color: white;
+/* Style the main navigation links */
+.home-header div a {
+  color: white !important;
   text-decoration: none;
+  display: block;
+  margin: 1rem 0;
+  font-size: 1.3rem;
   transition: opacity 0.2s;
+  opacity: 1;
 }
 
-.home-header p:last-child a:hover {
+.home-header div a:hover {
   opacity: 0.8;
+}
+
+/* Style the social media icons container */
+.home-header div[style*="margin-top: 2rem"] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
 }
 
 /* Publications page styling */
@@ -152,4 +158,17 @@ a {
 
 a:hover {
   opacity: 0.8;
+}
+
+/* Writing page styles */
+.writing-header {
+  color: white !important;
+  font-size: 2.5rem !important;
+  font-weight: 300 !important;
+  margin-bottom: 2rem !important;
+  font-family: 'Montserrat', sans-serif !important;
+  text-align: left !important;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
 } 
