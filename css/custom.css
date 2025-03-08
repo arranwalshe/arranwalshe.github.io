@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap');
+
+body {
+  background-color: black;
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.home-header {
+  text-align: center;
+  padding: 4rem 0;
+}
+
+.main-name {
+  font-size: 3rem;
+  font-weight: 300;
+  margin-bottom: 2rem;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.main-name p:first-child {
+  margin-bottom: 2rem;
+}
+
+/* Target the paragraph containing the links */
+.home-header p:last-child {
+  font-size: 1.1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Style the links themselves */
+.home-header p:last-child a {
+  color: white;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.home-header p:last-child a:hover {
+  opacity: 0.8;
+}
+
+/* Publications page styling */
+.content {
+  text-align: center;
+  padding: 2rem;
+}
+
+/* Main page styling */
+.content h1 {
+  display: none;  /* Hide the title since we have it in the content */
+}
+
+.content p:first-of-type {
+  font-size: 2rem;
+  font-weight: 300;
+  margin-bottom: 3rem;
+}
+
+.content a {
+  color: white;
+  text-decoration: none;
+  display: block;
+  margin: 1.5rem 0;
+  font-size: 1.2rem;
+  transition: opacity 0.2s;
+}
+
+.content a:hover {
+  opacity: 0.8;
+}
+
+/* Specifically target the publications headings and content */
+.content h2,
+.content h3,
+.content p {
+  text-align: left !important;
+  margin-left: 0;
+}
+
+/* Target the article container */
+article.pa3 {
+  text-align: left !important;
+}
+
+/* Target the main content area */
+.center {
+  text-align: left !important;
+}
+
+/* Hide footer */
+.site-footer, 
+footer[role="contentinfo"],
+.ananke-socials,
+.bottom-0 {
+  display: none !important;
+}
+
+/* Add these specific overrides for the publications page */
+.page-content {
+  text-align: left !important;
+}
+
+.page-content h2,
+.page-content h3 {
+  text-align: left !important;
+  margin-left: 0 !important;
+}
+
+/* Override Ananke theme defaults */
+.nested-copy-line-height,
+.nested-headline-line-height,
+.nested-links,
+.measure-wide {
+  text-align: left !important;
+}
+
+/* Add these new styles at the end of the file */
+.publications-header {
+  color: white !important;
+  font-size: 2.5rem !important;
+  font-weight: 300 !important;
+  margin-bottom: 2rem !important;
+  font-family: 'Montserrat', sans-serif !important;
+  text-align: left !important;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+.subheading {
+  color: #9a9a9a;
+  text-align: left !important;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+  display: block;
+  margin: 10px 0;
+}
+
+a:hover {
+  opacity: 0.8;
+} 
