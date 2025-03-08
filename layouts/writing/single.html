@@ -1,0 +1,206 @@
+{{ define "main" }}
+<!-- Background image container - adjusted to fully cover viewport -->
+<div style="background-image: url('/images/writing2.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; min-height: 100vh; position: fixed; top: 0; left: 0; right: 0; bottom: 0; width: 100vw; height: 100vh; z-index: -1; transform: scaleX(-1);">
+</div>
+
+<div style="min-height: 100vh; position: relative;">
+    <!-- Navigation - removed black background -->
+    <nav style="position: fixed; top: 0; left: 0; right: 0; padding: 1rem; z-index: 1000;">
+        <div style="max-width: 1400px; margin: 0 auto 0 2rem; display: flex; align-items: center;">
+            <a href="/" style="color: white !important; text-decoration: none !important; font-size: 1.5em; font-family: 'Montserrat', sans-serif;">
+                Home
+            </a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div style="max-width: 100%; margin: 0; padding-top: 10vh;">
+        <div class="headers-container" style="padding-left: 4vw;">
+            <div class="section-container">
+                <h2 onclick="toggleSection('policy')" style="color: white; font-size: 1.4rem; margin: 0; cursor: pointer;">
+                    Policy & Journalism
+                </h2>
+                <div id="policy" class="section-content" style="display: none;">
+                    <p>Arran Robert Walshe, "Multi-ethnic Kirkuk rocked by clashes as Kurdish farmers claim land ownership." <i>Amwaj.media</i>. Feb. 25, 2025 <a href="https://amwaj.media/media-monitor/multi-ethnic-kirkuk-rocked-by-clashes-as-kurdish-farmers-claim-land-ownership">[link]</a></p>
+
+                    <p>Arran Robert Walshe, "Debate on change within PMU puts spotlight on Shiite division in Iraq." <i>Amwaj.media</i>. Feb. 18, 2025 <a href="https://amwaj.media/media-monitor/debate-on-change-within-pmu-puts-spotlight-on-shiite-division-in-iraq">[link]</a></p>
+
+                    <p>Arran Robert Walshe, "Praise and protests erupt as Iraq's top court nods to contentious laws." <i>Amwaj.media</i>. Feb. 12, 2025 <a href="https://amwaj.media/media-monitor/praise-and-protests-erupt-as-iraq-s-top-court-nods-to-contentious-laws">[link]</a></p>
+
+                    <p>Arran Robert Walshe, "De-Ba'athification in Iraq in spotlight as Syria grapples with its past." <i>Amwaj.media</i>. Jan. 31, 2025 <a href="https://amwaj.media/media-monitor/de-ba-athification-in-iraq-in-spotlight-as-syria-grapples-with-its-past">[link]</a></p>
+
+                    <p>Arran Robert Walshe, "Parliamentary horse-trading over divisive laws sparks backlash in Iraq." <i>Amwaj.media</i>. Jan. 29, 2025 <a href="https://amwaj.media/media-monitor/parliamentary-horse-trading-over-divisive-laws-sparks-backlash-in-iraq">[link]</a></p>
+
+                    <p>Arran Robert Walshe, "Iraq overhauls mandate of spy agency amid concerns over IS." <i>Amwaj.media</i>. Jan. 24, 2025 <a href="https://amwaj.media/media-monitor/iraq-overhauls-mandate-of-spy-agency-amid-concerns-over-is">[link]</a></p>
+
+                    <p>Arran Robert Walshe, "Syrian community in focus as calls for repatriation grow in Iraq." <i>Amwaj.media</i>. Jan. 24, 2025 <a href="https://amwaj.media/media-monitor/syrian-community-in-focus-as-calls-for-repatriation-grow-in-iraq">[link]</a></p>
+
+                    <p>Arran Robert Walshe, "PMU's future on agenda as Sudani touts new strategy in Tehran." <i>Amwaj.media</i>. Jan. 15, 2025 <a href="https://amwaj.media/media-monitor/pmu-s-future-on-agenda-as-sudani-touts-new-strategy-in-tehran">[link]</a></p>
+
+                    <p>Arran Robert Walshe, "Outreach to HTS sparks backlash, debate within Iraq's Shiite establishment." <i>Amwaj.media</i>. Jan. 9, 2025 <a href="https://amwaj.media/media-monitor/outreach-to-hts-sparks-backlash-debate-within-iraq-s-shiite-establishment">[link]</a></p>
+
+                    <p>Arran Robert Walshe, "Most fleeing Syrian government forces leave Iraq, but some remain." <i>Amwaj.media</i>. Dec. 31, 2024 <a href="https://amwaj.media/media-monitor/most-fleeing-syrian-government-forces-leave-iraq-but-some-remain">[link]</a></p>
+
+                    <p>Arran Robert Walshe, "IRGC officer faces US charges over American teacher's Baghdad murder." <i>Amwaj.media</i>. Dec. 30, 2024 <a href="https://amwaj.media/media-monitor/irgc-officer-faces-us-charges-over-american-teacher-s-baghdad-murder">[link]</a></p>
+
+                    <p>Arran Robert Walshe, "Iraq seeks regional response to Syria crisis amid pressure on PMU." <i>Amwaj.media</i>. Dec. 20, 2024 <a href="https://amwaj.media/media-monitor/iraq-seeks-regional-response-to-syria-crisis-amid-pressure-on-pmu">[link]</a></p>
+
+                    <p>Arran Robert Walshe, "Iraq's media watchdog imposes strict controls on Syria coverage." <i>Amwaj.media</i>. Dec. 15, 2024 <a href="https://amwaj.media/media-monitor/iraq-s-media-watchdog-imposes-strict-controls-on-syria-coverage">[link]</a></p>
+
+                    <p>Arran Robert Walshe, "Iraqi politicians react to Assad's fall in Syria." <i>Amwaj.media</i>. Dec. 11, 2024 <a href="https://amwaj.media/media-monitor/iraqi-politicians-react-to-assad-s-fall-in-syria">[link]</a></p>
+
+                    <p>Arran Robert Walshe, "Iraq's 'world-first' migration pact with the UK targets human trafficking networks." <i>Amwaj.media</i>. Dec. 11, 2024 <a href="https://amwaj.media/media-monitor/iraq-s-world-first-migration-pact-with-the-uk-targets-human-trafficking-networks">[link]</a></p>
+
+                    <p>Arran Robert Walshe, "Will Iraq heed HTS leader's call for Shiite fighters to stay out of Syria?" <i>Amwaj.media</i>. Dec. 7, 2024 <a href="https://amwaj.media/media-monitor/will-iraq-heed-hts-leader-s-call-for-shiite-fighters-to-stay-out-of-syria-nbsp">[link]</a></p>
+
+                    <p>Arran Robert Walshe, "Iraqi 'resistance' in focus as Syrian government battles Sunni rebels." <i>Amwaj.media</i>. Dec. 5, 2024 <a href="https://amwaj.media/media-monitor/iraqi-resistance-in-focus-as-syrian-government-battles-sunni-rebels">[link]</a></p>
+
+                    <p>Arran Robert Walshe, "US court grants first-of-its-kind compensation to Abu Ghraib victims." <i>Amwaj.media</i>. Nov. 27, 2024 <a href="https://amwaj.media/media-monitor/us-court-grants-first-of-its-kind-compensation-to-abu-ghraib-victims">[link]</a></p>
+
+                    <p>Arran Robert Walshe, "Iraq's beleaguered property restitution law delayed amid Sunni Arab opposition." <i>Amwaj.media</i>. Nov. 13, 2024 <a href="https://amwaj.media/media-monitor/iraq-s-beleaguered-property-restitution-law-delayed-amid-sunni-arab-opposition">[link]</a></p>
+
+                    <p>Arran Robert Walshe, "Iraq, Saudi Arabia move to shore up military cooperation." <i>Amwaj.media</i>. Nov. 8, 2024 <a href="https://amwaj.media/media-monitor/iraq-saudi-arabia-move-to-shore-up-military-cooperation">[link]</a></p>
+
+                    <p>Arran Robert Walshe, "Questions linger as Iraq's prime minister loses first minister." <i>Amwaj.media</i>. Nov. 5, 2024 <a href="https://amwaj.media/media-monitor/questions-linger-as-iraq-s-prime-minister-loses-first-minister">[link]</a></p>
+
+                    <p>Arran Robert Walshe, "Iraqi speakership returns to Sunni hands as political shifts underway." <i>Amwaj.media</i>. Nov. 4, 2024 <a href="https://amwaj.media/media-monitor/iraqi-speakership-returns-to-sunni-hands-as-political-shifts-underway">[link]</a></p>
+
+                    <p>Arran Robert Walshe, "Police crackdown sparks unrest in Iraq's southern 'protest capital'." <i>Amwaj.media</i>. Oct. 31, 2024 <a href="https://amwaj.media/media-monitor/police-crackdown-sparks-unrest-in-iraq-s-southern-protest-capital">[link]</a></p>
+
+                    <p>Arran Robert Walshe, "Furor over 'violation' as Israel said to use Iraqi airspace to hit Iran." <i>Amwaj.media</i>. Oct. 30, 2024 <a href="https://amwaj.media/media-monitor/furor-over-violation-as-israel-said-to-use-iraqi-airspace-to-hit-iran">[link]</a></p>
+
+                    <p>Arran Robert Walshe, "Saudi broadcaster in Iraqi crosshairs over sniping at 'heroes of the resistance'." <i>Amwaj.media</i>. Oct. 25, 2024 <a href="https://amwaj.media/media-monitor/saudi-broadcaster-in-iraqi-crosshairs-over-sniping-at-heroes-of-the-resistance">[link]</a></p>
+
+                    <p>Arran Robert Walshe, "Iraq buys missile defenses amid threat of regional missile war." <i>Amwaj.media</i>. Oct. 24, 2024 <a href="https://amwaj.media/media-monitor/iraq-buys-missile-defenses-amid-threat-of-regional-missile-war">[link]</a></p>
+
+                    <p>Arran Robert Walshe, "Wiretapping crisis clouds Iraqi premier's political fortunes." <i>Amwaj.media</i>. Oct. 18, 2024 <a href="https://amwaj.media/article/wiretapping-crisis-clouds-iraqi-premier-s-political-fortunes">[link]</a></p>
+
+                    <p>Arran Robert Walshe, "Iraq's integrity head faces charges following anti-corruption 'tirade'." <i>Amwaj.media</i>. Oct. 4, 2024 <a href="https://amwaj.media/media-monitor/iraq-s-integrity-head-faces-charges-following-anti-corruption-tirade">[link]</a></p>
+
+                    <p>Arran Robert Walshe, "In Iraq, speculation rises over Sudani bid for second term." <i>Amwaj.media</i>. Sep. 26, 2024 <a href="https://amwaj.media/media-monitor/in-iraq-speculation-rises-over-sudani-bid-for-second-term">[link]</a></p>
+
+                    <p>Arran Robert Walshe, "Sentencing of think tank director riles intrigue on Iraq's political stage." <i>Amwaj.media</i>. Sept. 25, 2024 <a href="https://amwaj.media/media-monitor/sentencing-of-think-tank-director-riles-intrigue-on-iraq-s-political-stage">[link]</a></p>
+
+                    <p>Arran Robert Walshe, "Switzerland reopens Baghdad embassy after 33-year closure." <i>Amwaj.media</i>. Sep. 15, 2024 <a href="https://amwaj.media/media-monitor/switzerland-reopens-baghdad-embassy-after-33-year-closure">[link]</a></p>
+
+                    <p>Arran Robert Walshe, "Facebook sheikhs' in focus as Iraqi lawmakers probe 'blood money'." <i>Amwaj.media</i>. Aug. 29, 2024 <a href="https://amwaj.media/media-monitor/facebook-sheikhs-in-focus-as-iraqi-lawmakers-probe-blood-money">[link]</a></p>
+
+                    <p>Arran Robert Walshe, "New twist in 'heist of the century' in Iraq as key figure 'fakes accident' in Beirut." <i>Amwaj.media</i>. Aug. 27, 2024 <a href="https://amwaj.media/media-monitor/new-twist-in-heist-of-the-century-in-iraq-as-key-figure-fakes-accident-in-beirut">[link]</a></p>
+
+                    <p>Arran Robert Walshe, "Claims of disappeared Pakistanis stoke Iraqi fears of migrant crisis." <i>Amwaj.media</i>. Aug. 14, 2024 <a href="https://amwaj.media/media-monitor/claims-of-disappeared-pakistanis-stoke-iraqi-fears-of-migrant-crisis">[link]</a></p>
+
+                    <p>Arran Robert Walshe, "Sudani pushes to realize old Iraqi dream of Baghdad metro." <i>Amwaj.media</i>. Aug. 8, 2024 <a href="https://amwaj.media/media-monitor/sudani-pushes-to-realize-old-iraqi-dream-of-baghdad-metro">[link]</a></p>
+
+                    <p>Arran Robert Walshe, "Reticent religious authorities stand to gain as Iraq debates personal status law." <i>Amwaj.media</i>. Aug. 6, 2024 <a href="https://amwaj.media/media-monitor/reticent-religious-authorities-stand-to-gain-as-iraq-debates-personal-status-law">[link]</a></p>
+
+                    <p>Arran Robert Walshe, "Clash over PMU Security Directorate exposes Iraqi Shiite power struggle." <i>Amwaj.media</i>. Aug. 2, 2024 <a href="https://amwaj.media/media-monitor/clash-over-pmu-security-directorate-exposes-iraqi-shiite-power-struggle">[link]</a></p>
+
+                    <p>Arran Robert Walshe, "Amid politicization claims, Iraq prepares for first census after Saddam." <i>Amwaj.media</i>. Jul. 29, 2024 <a href="https://amwaj.media/media-monitor/amid-politicization-claims-iraq-prepares-for-first-census-after-saddam">[link]</a></p>
+
+                    <p>Arran Robert Walshe, "Death sentence for IS leader's widow highlights legal ambiguities in Iraq." <i>Amwaj.media</i>. July 23, 2024 <a href="https://amwaj.media/media-monitor/death-sentence-for-is-leader-s-widow-highlights-legal-ambiguities-in-iraq">[link]</a></p>
+
+                    <p>Arran Robert Walshe, "Is Abadi plotting to shake up alliances ahead of Iraqi elections." <i>Amwaj.media</i>. July 10, 2024 <a href="https://amwaj.media/media-monitor/is-abadi-plotting-to-shake-up-alliances-ahead-of-iraqi-elections">[link]</a></p>
+
+                    <p>Arran Robert Walshe, "Iraqis back top judge as US lawmaker pursues blacklisting of 'tool of Iran'." <i>Amwaj.media</i>. July 4, 2024 <a href="https://amwaj.media/media-monitor/iraqis-back-top-judge-as-us-lawmaker-pursues-blacklisting-of-tool-of-iran">[link]</a></p>
+
+                    <p>Arran Robert Walshe, "Iraqi resistance closes ranks, threatens US amid talk of Hezbollah-Israel war." <i>Amwaj.media</i>. July 2, 2024 <a href="https://amwaj.media/media-monitor/iraqi-resistance-closes-ranks-threatens-us-amid-talk-of-hezbollah-israel-war">[link]</a></p>
+
+                    <p>Arran Robert Walshe, "Cult murders in southern Iraq provoke fears of rising youth extremism." <i>Amwaj.media</i>. June 25, 2024 <a href="https://amwaj.media/media-monitor/cult-murders-in-southern-iraq-provoke-fears-of-rising-youth-extremism">[link]</a></p>
+
+                    <p>Arran Robert Walshe, "Shrine PMU leader's anti-corruption drive piles pressure on Iraqi PMU." <i>Amwaj.media</i>. June 24, 2024 <a href="https://amwaj.media/media-monitor/shrine-pmu-leader-s-anti-corruption-drive-piles-pressure-on-iraqi-pm">[link]</a></p>
+
+                    <p>Arran Robert Walshe, "Does Diyala impasse signal collapse of Iraq's ruling Shiite coalition." <i>Amwaj.media</i>. June 14, 2024 <a href="https://amwaj.media/media-monitor/does-diyala-impasse-signal-collapse-of-iraq-s-ruling-shiite-coalition">[link]</a></p>
+
+                    <p>Arran Robert Walshe, "Shock ruling indicates tension over authority among Iraq's top courts." <i>Amwaj.media</i>. June 7, 2024 <a href="https://amwaj.media/media-monitor/shock-ruling-indicates-tension-over-authority-among-iraq-s-top-courts">[link]</a></p>
+
+                    <p>Arran Robert Walshe, "Will buyback scheme convince Iraqis to offload AK-47s, RPGs." <i>Amwaj.media</i>. June 4, 2024 <a href="https://amwaj.media/media-monitor/will-buyback-scheme-convince-iraqis-to-offload-ak-47s-rpgs">[link]</a></p>
+
+                    <p>Arran Robert Walshe, "After surge in users, Iraq considers ban 'pornographic' TikTok." <i>Amwaj.media</i>. May 29, 2024 <a href="https://amwaj.media/media-monitor/after-surge-in-users-iraq-considers-ban-pornographic-tiktok">[link]</a></p>
+
+                    <p>Arran Robert Walshe, "China dominates bidding for Iraqi energy as US firms stay out." <i>Amwaj.media</i>. May 25, 2024 <a href="https://amwaj.media/media-monitor/china-dominates-bidding-for-iraqi-energy-as-us-firms-stay-out">[link]</a></p>
+
+                    <p>Arran Robert Walshe, "Inside story: Saudi Arabia opens up to Iraq's Shiite shrines." <i>Amwaj.media</i>. May 15, 2024 <a href="https://amwaj.media/media-monitor/inside-story-saudi-arabia-opens-up-to-iraq-s-shiite-shrines">[link]</a></p>
+
+                    <p>Arran Robert Walshe, "Plans for Mosul expansion spark talk of demographic change." <i>Amwaj.media</i>. May 6, 2024 <a href="https://amwaj.media/article/plans-for-mosul-expansion-spark-talk-of-demographic-change">[link]</a></p>
+
+                    <p>Arran Robert Walshe, "Will criminalization of homosexuality derail warming of Iraq-US ties." <i>Amwaj.media</i>. Apr. 30, 2024 <a href="https://amwaj.media/media-monitor/will-criminalization-of-homosexuality-derail-warming-of-iraq-us-ties">[link]</a></p>
+
+                    <p>Arran Robert Walshe, "Amid Iran-Israel confrontation, large blast at Iraqi base raises questions." <i>Amwaj.media</i>. Apr. 23, 2024 <a href="https://amwaj.media/media-monitor/amid-iran-israel-confrontation-large-blast-at-iraqi-base-raises-questions">[link]</a></p>
+
+                    <p>Arran Robert Walshe, "Iraq girds to revive long-abandoned nuclear energy program." <i>Amwaj.media</i>. Mar. 21, 2024 <a href="https://amwaj.media/media-monitor/iraq-girds-to-revive-long-abandoned-nuclear-energy-program">[link]</a></p>
+                </div>
+            </div>
+
+            <div class="section-container">
+                <h2 onclick="toggleSection('books')" style="color: white; font-size: 1.4rem; margin: 0; cursor: pointer;">
+                    Book Chapters
+                </h2>
+                <div id="books" class="section-content" style="display: none;">
+                    <p>Arran Robert Walshe, "Sealed with a Thumbprint: The Hybrid Politics of a Martyrdom Contract," <i>Revolutionaries and Global Politics: War Machines from the Bolsheviks to ISIS</i>. Eds. Ondrej Ditrych, Jakub Zahora, and Jan Daniel. Edinburgh University Press, Edinburgh. 2023 <a href="https://academic.oup.com/edinburgh-scholarship-online/book/51453">[link]</a></p>
+                </div>
+            </div>
+
+            <div class="section-container">
+                <h2 onclick="toggleSection('other')" style="color: white; font-size: 1.4rem; margin: 0; cursor: pointer;">
+                    Other Writing
+                </h2>
+                <div id="other" class="section-content" style="display: none;">
+                    <p>Arran Robert Walshe, "Water Be a String" in <i>Is al-Andalus a Place or a Poem?</i> Edited & Illustrated by Molly Crabapple. New York University. NY, New York <a href="/docs/water.pdf">[link]</a></p>
+                    
+                    <p>Arran Robert Walshe, "The Mango Juice is a Needle, and We're the Thread; or, the Non-Transactional Ethics of Iraqi Karam." <i>Globally Rooted Magazine</i>. Issue 2, May 2023 <a href="https://globallyrooted.com/arran-walshe-the-mango-juice-is-a-needle-and-we-are-the-thread">[link]</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+.headers-container {
+    display: flex;
+    gap: 3rem;
+    margin-bottom: 2rem;
+    position: relative;
+    z-index: 2;
+}
+
+.section-container {
+    position: static;
+}
+
+.section-content {
+    color: white;
+    padding: 1rem;
+    position: absolute;
+    width: 800px;
+    left: 2vw;
+    top: 3rem;
+}
+
+.section-content a {
+    color: #00BFFF;
+    text-decoration: none;
+}
+
+.section-content a:hover {
+    text-decoration: underline;
+}
+</style>
+
+<script>
+function toggleSection(sectionId) {
+    const section = document.getElementById(sectionId);
+    const allSections = document.getElementsByClassName('section-content');
+    
+    // Close all other sections
+    for (let content of allSections) {
+        if (content.id !== sectionId) {
+            content.style.display = 'none';
+        }
+    }
+    
+    // Toggle the clicked section
+    section.style.display = section.style.display === 'none' ? 'block' : 'none';
+}
+</script>
+
+{{ end }} 

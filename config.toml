@@ -1,14 +1,15 @@
-baseURL = "https://www.arranwalshe.com"
+baseURL = "https://arranwalshe.github.io/"
 languageCode = "en-us"
-title = ""
-theme = "ananke"
+title = "Arran Walshe"
+# Comment out theme temporarily
+# theme = "ananke"
 disableKinds = ["taxonomy", "term", "RSS", "sitemap", "robotsTXT"]
 
 [params]
   custom_css = ["css/custom.css"]
   body_classes = "bg-black white"
   site_logo = ""
-  description = ""
+  description = "Personal website of Arran Walshe"
   background_color_class = "bg-black"
   recent_posts_number = 0
   footer = ""
@@ -19,4 +20,23 @@ disableKinds = ["taxonomy", "term", "RSS", "sitemap", "robotsTXT"]
   unsafe = true  # Allows raw HTML in markdown files
 
 [menu]
-  # Removing default menu items by not defining them
+  [[menu.main]]
+    name = "Home"
+    url = "/"
+    weight = 1
+  [[menu.main]]
+    name = "Writing"
+    url = "/writing/"
+    weight = 2
+  [[menu.main]]
+    name = "CV"
+    url = "/cv/"
+    weight = 3
+  [[menu.main]]
+    name = "Bio"
+    url = "/bio/"
+    weight = 4
+  [[menu.main]]
+    name = "Photography"
+    url = "/photography/"
+    weight = 5

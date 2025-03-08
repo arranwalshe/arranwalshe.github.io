@@ -1,172 +1,28 @@
 {{ define "main" }}
-<div style="width: 100vw; margin-left: calc(-50vw + 50%); margin-right: calc(-50vw + 50%); background-color: black;">
-    <nav role="navigation" style="position: fixed; top: 0; left: 0; right: 0; background-color: transparent; z-index: 1000; padding: 0.25rem 0;">
-        <div style="position: relative; width: 100%; display: flex; align-items: center; padding: 0 1rem;">
-            <a href="/" class="f3 fw2 hover-white no-underline white-90" style="font-family: 'Montserrat', sans-serif; font-size: 1.5em;">
+<!-- TEMPLATE D: page/publications.html -->
+<div style="background-color: black; min-height: 100vh;">
+    <!-- Navigation -->
+    <nav style="position: fixed; top: 0; left: 0; right: 0; background-color: black; padding: 1rem; z-index: 1000;">
+        <div style="max-width: 1200px; margin: 0 auto; display: flex; align-items: center;">
+            <a href="/" style="color: white; text-decoration: none; font-size: 1.5em; font-family: 'Montserrat', sans-serif;">
                 Home
             </a>
-            <span class="f3 fw2 white-90" style="font-family: 'Montserrat', sans-serif; position: absolute; left: 50%; transform: translateX(-50%); font-size: 1.8em;">
-                Writing
-            </span>
         </div>
     </nav>
-    <div class="publications-container" style="margin-top: -22.5rem; width: 100%; display: flex; justify-content: flex-start; padding-left: 4rem;">
-        <div class="publications-content" style="width: 900px; padding: 0; display: flex; flex-direction: column; align-items: flex-start;">
-            <div class="subheader-container" style="display: flex; gap: 4rem; margin-bottom: 2rem;">
-                <div class="header-section">
-                    <h2 style="color: white; font-size: 1.4rem; cursor: pointer;">Policy & Journalism</h2>
-                </div>
-                <div class="header-section">
-                    <h2 style="color: white; font-size: 1.4rem; cursor: pointer;">Book Chapters</h2>
-                </div>
-                <div class="header-section">
-                    <h2 style="color: white; font-size: 1.4rem; cursor: pointer;">Other Writing</h2>
-                </div>
-            </div>
-            <div class="content-sections" style="width: 100%;">
-                {{ .Content }}
-            </div>
+
+    <!-- Main Content -->
+    <div style="max-width: 1200px; margin: 0 auto; padding-top: 100px;">
+        <!-- Section Headers -->
+        <div style="display: flex; gap: 3rem; margin-bottom: 2rem;">
+            <h2 style="color: white; font-size: 1.4rem; margin: 0; cursor: pointer;">Policy & Journalism</h2>
+            <h2 style="color: white; font-size: 1.4rem; margin: 0; cursor: pointer;">Book Chapters</h2>
+            <h2 style="color: white; font-size: 1.4rem; margin: 0; cursor: pointer;">Other Writing</h2>
+        </div>
+
+        <!-- Empty Content Area -->
+        <div style="color: white;">
+            <!-- We'll add content here later -->
         </div>
     </div>
 </div>
-
-<style>
-    /* Add this to hide the original content */
-    .content-sections > h2,
-    .content-sections > p {
-        display: none;
-    }
-
-    .subheader-container {
-        display: flex;
-        justify-content: flex-start;
-        gap: 4rem;
-        margin-bottom: 2rem;
-        padding-top: 0;
-        margin-top: 0;
-        position: relative;
-    }
-
-    .subheader-container h2 {
-        color: white;
-        font-size: 1.4rem;
-        cursor: pointer;
-        position: relative;
-        padding-left: 1.2em;
-    }
-
-    .subheader-container h2::before {
-        content: '▲';
-        font-size: 0.8em;
-        position: absolute;
-        left: 0;
-        top: 50%;
-        transform: translateY(-50%);
-    }
-
-    .subheader-container h2.active::before {
-        content: '▼';
-    }
-
-    .header-section {
-        position: static;
-    }
-
-    .collapsible-content {
-        display: none;
-        padding: 1rem 0;
-        color: white;
-        font-size: 1.2rem;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        margin-top: 0.25rem;
-        text-align: left;
-        max-width: 900px;
-    }
-
-    .collapsible-content.expanded {
-        display: block;
-    }
-
-    .collapsible-content p {
-        margin: 0.5rem 0;
-        white-space: normal;
-        overflow-wrap: break-word;
-    }
-
-    .collapsible-content a {
-        color: #3b82f6 !important;
-        text-decoration: none;
-        display: inline;
-        margin-left: 0.5em;
-        white-space: nowrap;
-    }
-
-    .collapsible-content a:hover {
-        opacity: 0.8;
-    }
-</style>
-
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        // Add target="_blank" to all links except the home link
-        document.querySelectorAll('a').forEach(link => {
-            const href = link.getAttribute('href');
-            if (href !== '/') {
-                link.setAttribute('target', '_blank');
-                link.setAttribute('rel', 'noopener noreferrer');
-            }
-        });
-
-        const content = document.querySelector('.content-sections');
-        const headers = Array.from(document.querySelectorAll('.subheader-container h2'));
-        const sections = Array.from(content.querySelectorAll('h2')).slice(0, 3);
-        
-        // Process headers and content
-        sections.forEach((section, index) => {
-            const contentDiv = document.createElement('div');
-            contentDiv.className = 'collapsible-content';
-            
-            let nextElement = section.nextElementSibling;
-            while (nextElement && nextElement.tagName !== 'H2') {
-                contentDiv.appendChild(nextElement.cloneNode(true));
-                nextElement = nextElement.nextElementSibling;
-            }
-            
-            // Add click handler to header
-            headers[index].addEventListener('click', function() {
-                const wasActive = this.classList.contains('active');
-                
-                // Remove active class from all headers
-                headers.forEach(h => h.classList.remove('active'));
-                
-                // Hide all content sections
-                document.querySelectorAll('.collapsible-content').forEach(c => {
-                    c.classList.remove('expanded');
-                });
-                
-                // Toggle this section if it wasn't active
-                if (!wasActive) {
-                    this.classList.add('active');
-                    contentDiv.classList.add('expanded');
-                }
-            });
-
-            // Add content after corresponding header
-            headers[index].after(contentDiv);
-        });
-
-        // Hide original content
-        sections.forEach(section => {
-            let nextElement = section;
-            while (nextElement && nextElement.tagName !== 'H2') {
-                const temp = nextElement.nextElementSibling;
-                nextElement.remove();
-                nextElement = temp;
-            }
-        });
-    });
-</script>
-{{ end }} 
+{{ end }}

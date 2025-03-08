@@ -1,22 +1,53 @@
 {{ define "main" }}
-<div style="width: 100vw; margin-left: calc(-50vw + 50%); margin-right: calc(-50vw + 50%);">
-    <nav class="pv3" role="navigation" style="position: fixed; top: 0; left: 0; right: 0; background-color: black; z-index: 1000;">
-        <div style="position: relative; width: 100%; display: flex; align-items: center; padding: 0 1rem;">
-            <a href="/" class="f3 fw2 hover-white no-underline white-90" style="font-family: 'Montserrat', sans-serif; font-size: 1.5em;">
-                Home
-            </a>
-            <span class="f3 fw2 white-90" style="font-family: 'Montserrat', sans-serif; position: absolute; left: 50%; transform: translateX(-50%); font-size: 1.8em;">
-                Arran Robert Walshe
-            </span>
-        </div>
-    </nav>
-    <div style="position: relative;">
-        <div class="content-container" style="padding-top: 5rem; margin-left: 4rem; max-width: 600px; font-size: 1.2rem;">
-            {{ .Content }}
-        </div>
-        <div style="position: absolute; right: 15rem; top: 3rem; z-index: 1;">
-            <img src="/images/Headshot.jpg" alt="Arran Walshe" style="width: 500px;">
+<!-- TEMPLATE A: page/single.html -->
+{{ if or (eq .RelPermalink "/publications/") (eq .RelPermalink "/writing/") }}
+    <!-- Writing page layout -->
+    <div style="width: 100vw; margin-left: calc(-50vw + 50%); margin-right: calc(-50vw + 50%); background-color: black;">
+        <nav role="navigation" style="position: fixed; top: 0; left: 0; right: 0; background-color: black; z-index: 1000; padding: 1rem;">
+            <div style="position: relative; width: 100%; display: flex; align-items: center; padding: 0 1rem;">
+                <a href="/" style="color: white !important; text-decoration: none !important; font-size: 1.5em; font-family: 'Montserrat', sans-serif;">
+                    Home
+                </a>
+                <span style="color: white; font-family: 'Montserrat', sans-serif; position: absolute; left: 50%; transform: translateX(-50%); font-size: 1.8em;">
+                    Writing
+                </span>
+            </div>
+        </nav>
+
+        <div style="padding-top: 6rem; max-width: 900px; margin: 0 auto; padding-left: 4rem; padding-right: 2rem;">
+            <div style="display: flex; justify-content: flex-start; gap: 4rem; margin-bottom: 2rem;">
+                <h2 style="color: white; font-size: 1.4rem; cursor: pointer; margin: 0;">Policy & Journalism</h2>
+                <h2 style="color: white; font-size: 1.4rem; cursor: pointer; margin: 0;">Book Chapters</h2>
+                <h2 style="color: white; font-size: 1.4rem; cursor: pointer; margin: 0;">Other Writing</h2>
+            </div>
+            <div style="color: white;">
+                {{ .Content }}
+            </div>
         </div>
     </div>
-</div>
+{{ else }}
+    <!-- Original single page layout - modified for bio page -->
+    <div style="width: 100vw; margin-left: calc(-50vw + 50%); margin-right: calc(-50vw + 50%);">
+        <!-- Add background image with transform and opacity overlay -->
+        <div style="background-image: url('/images/bio2.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; min-height: 100vh; position: fixed; top: 0; left: 0; right: 0; bottom: 0; width: 100vw; height: 100vh; z-index: -2; transform: scaleX(-1);">
+        </div>
+        <div style="background-color: rgba(0, 0, 0, 0.3); position: fixed; top: 0; left: 0; right: 0; bottom: 0; width: 100vw; height: 100vh; z-index: -1;">
+        </div>
+
+        <nav class="pv3" role="navigation" style="position: fixed; top: 0; left: 0; right: 0; background-color: transparent; z-index: 1000;">
+            <div style="position: relative; width: 100%; display: flex; align-items: center; padding: 2rem 1rem;">
+                <a href="/" class="f3 fw2" style="color: white !important; text-decoration: none !important; font-family: 'Montserrat', sans-serif; font-size: 1.5em;">
+                    Home
+                </a>
+            </div>
+        </nav>
+
+        <div style="position: relative;">
+            <div class="content-container" style="padding-top: 5rem; margin-left: 4rem; max-width: 600px; font-size: 1.2rem;">
+                {{ .Content }}
+            </div>
+            <!-- Removed the headshot image div -->
+        </div>
+    </div>
+{{ end }}
 {{ end }} 
