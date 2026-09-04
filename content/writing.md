@@ -7,6 +7,10 @@ url: "/writing/"
 
 ## Policy & Journalism
 
+"Alternative Amman—Making Counterculture in the Jordanian Capital." *MERIP*. Aug. 20, 2026 [[link]](https://www.merip.org/2026/08/alternative-amman-making-counterculture-in-the-jordanian-capital/)
+
+"Iraq closes dozens of 'fake' PMU headquarters, but ambiguities remain." *Amwaj.media*. Aug. 14, 2026 [[link]](https://amwaj.media/en/media-monitor/iraq-closes-dozens-of-fake-pmu-headquarters-but-ambiguities-remain)
+
 "Multi-ethnic Kirkuk rocked by clashes as Kurdish farmers claim land ownership." *Amwaj.media*. Feb. 25, 2025 [[link]](https://amwaj.media/media-monitor/multi-ethnic-kirkuk-rocked-by-clashes-as-kurdish-farmers-claim-land-ownership)
 
 "Debate on change within PMU puts spotlight on Shiite division in Iraq." *Amwaj.media*. Feb. 18, 2025 [[link]](https://amwaj.media/media-monitor/debate-on-change-within-pmu-puts-spotlight-on-shiite-division-in-iraq)
