@@ -17,14 +17,14 @@
     <div style="max-width: 100%; margin: 0; padding-top: 10vh;">
         <div class="headers-container" style="padding-left: 4vw;">
             <div class="section-container">
-                <h2 onclick="toggleSection('policy')" style="color: white; font-size: 1.4rem; margin: 0; cursor: pointer;">
-                    Policy & Journalism
+                <h2 onclick="toggleSection('news')" style="color: white; font-size: 1.4rem; margin: 0; cursor: pointer;">
+                    News Analysis
                 </h2>
-                <div id="policy" class="section-content" style="display: none;">
-                    <p>Arran Robert Walshe, "Alternative Amman&mdash;Making Counterculture in the Jordanian Capital." <i>MERIP</i>. Aug. 20, 2026 <a href="https://www.merip.org/2026/08/alternative-amman-making-counterculture-in-the-jordanian-capital/">[link]</a></p>
-
+                <div id="news" class="section-content" style="display: none;">
+                    <h4 class="year-heading">2026</h4>
                     <p>Arran Robert Walshe, "Iraq closes dozens of 'fake' PMU headquarters, but ambiguities remain." <i>Amwaj.media</i>. Aug. 14, 2026 <a href="https://amwaj.media/en/media-monitor/iraq-closes-dozens-of-fake-pmu-headquarters-but-ambiguities-remain">[link]</a></p>
 
+                    <h4 class="year-heading">2025</h4>
                     <p>Arran Robert Walshe, "Multi-ethnic Kirkuk rocked by clashes as Kurdish farmers claim land ownership." <i>Amwaj.media</i>. Feb. 25, 2025 <a href="https://amwaj.media/media-monitor/multi-ethnic-kirkuk-rocked-by-clashes-as-kurdish-farmers-claim-land-ownership">[link]</a></p>
 
                     <p>Arran Robert Walshe, "Debate on change within PMU puts spotlight on Shiite division in Iraq." <i>Amwaj.media</i>. Feb. 18, 2025 <a href="https://amwaj.media/media-monitor/debate-on-change-within-pmu-puts-spotlight-on-shiite-division-in-iraq">[link]</a></p>
@@ -43,6 +43,7 @@
 
                     <p>Arran Robert Walshe, "Outreach to HTS sparks backlash, debate within Iraq's Shiite establishment." <i>Amwaj.media</i>. Jan. 9, 2025 <a href="https://amwaj.media/media-monitor/outreach-to-hts-sparks-backlash-debate-within-iraq-s-shiite-establishment">[link]</a></p>
 
+                    <h4 class="year-heading">2024</h4>
                     <p>Arran Robert Walshe, "Most fleeing Syrian government forces leave Iraq, but some remain." <i>Amwaj.media</i>. Dec. 31, 2024 <a href="https://amwaj.media/media-monitor/most-fleeing-syrian-government-forces-leave-iraq-but-some-remain">[link]</a></p>
 
                     <p>Arran Robert Walshe, "IRGC officer faces US charges over American teacher's Baghdad murder." <i>Amwaj.media</i>. Dec. 30, 2024 <a href="https://amwaj.media/media-monitor/irgc-officer-faces-us-charges-over-american-teacher-s-baghdad-murder">[link]</a></p>
@@ -145,12 +146,14 @@
             </div>
 
             <div class="section-container">
-                <h2 onclick="toggleSection('other')" style="color: white; font-size: 1.4rem; margin: 0; cursor: pointer;">
-                    Other Writing
+                <h2 onclick="toggleSection('features')" style="color: white; font-size: 1.4rem; margin: 0; cursor: pointer;">
+                    Features & Essays
                 </h2>
-                <div id="other" class="section-content" style="display: none;">
+                <div id="features" class="section-content" style="display: none;">
+                    <p>Arran Robert Walshe, "Alternative Amman&mdash;Making Counterculture in the Jordanian Capital." <i>MERIP</i>. Aug. 20, 2026 <a href="https://www.merip.org/2026/08/alternative-amman-making-counterculture-in-the-jordanian-capital/">[link]</a></p>
+
                     <p>Arran Robert Walshe, "Water Be a String" in <i>Is al-Andalus a Place or a Poem?</i> Edited & Illustrated by Molly Crabapple. New York University. NY, New York <a href="/docs/water.pdf">[link]</a></p>
-                    
+
                     <p>Arran Robert Walshe, "The Mango Juice is a Needle, and We're the Thread; or, the Non-Transactional Ethics of Iraqi Karam." <i>Globally Rooted Magazine</i>. Issue 2, May 2023 <a href="https://globallyrooted.com/arran-walshe-the-mango-juice-is-a-needle-and-we-are-the-thread">[link]</a></p>
                 </div>
             </div>
@@ -175,9 +178,32 @@
     color: white;
     padding: 1rem;
     position: absolute;
-    width: 800px;
     left: 2vw;
     top: 3rem;
+    width: 90vw;
+    max-width: 1400px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 3rem;
+    row-gap: 0.5rem;
+    align-content: start;
+}
+
+.section-content p {
+    margin: 0.5rem 0;
+}
+
+.section-content .year-heading {
+    grid-column: 1 / -1;
+    color: #00BFFF;
+    font-size: 1.1rem;
+    margin: 1rem 0 0.25rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+    padding-bottom: 0.25rem;
+}
+
+.section-content .year-heading:first-child {
+    margin-top: 0;
 }
 
 .section-content a {
@@ -188,23 +214,29 @@
 .section-content a:hover {
     text-decoration: underline;
 }
+
+@media (max-width: 900px) {
+    .section-content {
+        grid-template-columns: 1fr;
+    }
+}
 </style>
 
 <script>
 function toggleSection(sectionId) {
     const section = document.getElementById(sectionId);
     const allSections = document.getElementsByClassName('section-content');
-    
+
     // Close all other sections
     for (let content of allSections) {
         if (content.id !== sectionId) {
             content.style.display = 'none';
         }
     }
-    
+
     // Toggle the clicked section
-    section.style.display = section.style.display === 'none' ? 'block' : 'none';
+    section.style.display = section.style.display === 'none' ? 'grid' : 'none';
 }
 </script>
 
-{{ end }} 
+{{ end }}
