@@ -4,8 +4,9 @@
 </div>
 
 <div style="min-height: 100vh; position: relative;">
-    <!-- Navigation -->
-    <nav style="position: fixed; top: 0; left: 0; right: 0; padding: 1rem; z-index: 1000; background-color: rgba(0, 0, 0, 0.75); backdrop-filter: blur(4px);">
+    <!-- Navigation: transparent at rest (shows the background photo), gains a
+         backdrop once scrolled so passing list text can't show through it -->
+    <nav id="site-nav" class="site-nav" style="position: fixed; top: 0; left: 0; right: 0; padding: 1rem; z-index: 1000;">
         <div style="max-width: 1400px; margin: 0 auto 0 2rem; display: flex; align-items: center;">
             <a href="/" style="color: white !important; text-decoration: none !important; font-size: 1.5em; font-family: 'Montserrat', sans-serif;">
                 Home
@@ -264,6 +265,16 @@
         grid-template-columns: 1fr;
     }
 }
+
+.site-nav {
+    background-color: transparent;
+    transition: background-color 0.2s ease;
+}
+
+.site-nav.scrolled {
+    background-color: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(4px);
+}
 </style>
 
 <script>
@@ -281,6 +292,17 @@ function toggleSection(sectionId) {
     // Toggle the clicked section
     section.style.display = section.style.display === 'none' ? 'grid' : 'none';
 }
+
+// Nav stays transparent over the hero photo at rest, but needs a backdrop
+// once scrolled so list text passing underneath it doesn't bleed through.
+(function () {
+    const nav = document.getElementById('site-nav');
+    function updateNav() {
+        nav.classList.toggle('scrolled', window.scrollY > 10);
+    }
+    window.addEventListener('scroll', updateNav, { passive: true });
+    updateNav();
+})();
 </script>
 
 {{ end }}
