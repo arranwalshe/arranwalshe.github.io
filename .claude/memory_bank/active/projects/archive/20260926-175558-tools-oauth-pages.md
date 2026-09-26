@@ -62,14 +62,12 @@ Implementation notes:
   file was byte-identical to the Desktop original (`cmp`); live privacy page had the final
   paragraph order.
 
-## Settled by the user
-
-- The privacy page's claim that content processed by Claude is not used to train AI models:
-  the user confirmed on 2026-09-26 that everything is set to not be used for training.
-  User-reported, not checked from this repo.
-
 ## Still open (not verified)
 
+These were open on 2026-09-24 and nothing since has resolved them:
+
+- That document content processed by Claude is not used to train AI models — depends on
+  which Claude terms/settings Arran uses. The privacy page states it as fact.
 - That this setup satisfies Google's Limited Use AI/ML provisions, which the page claims to
   adhere to. Stated from memory; the current policy page was not read.
 
@@ -81,5 +79,3 @@ Implementation notes:
   all five personal Cloud projects (Writing, Creative, Life, Academic, IRCKHF) publishing to
   production with the `/tools/` pages on their Branding page (2026-09-24/25). Amwaj recorded
   as not using them (Internal project). Added the must-stay note for the verification file.
-- 2026-09-26 — User confirmed training is turned off everywhere, which settles the
-  privacy page's no-training claim. Limited Use AI/ML compliance remains unverified.
