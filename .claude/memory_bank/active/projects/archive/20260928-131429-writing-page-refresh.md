@@ -5,8 +5,6 @@ status: mostly done — one follow-up open (Amwaj byline/URL spot-check)
 
 # Writing page refresh (publications update + redesign)
 
-**Status:** mostly done — one follow-up open (Amwaj byline/URL spot-check)
-
 ## What this project is
 
 Bringing `/writing/` up to date with new publications (Amwaj, MERIP) and reorganizing/
@@ -85,11 +83,3 @@ All of the following is live on `arranwalshe.com/writing/` and deployed via the 
    the voice-corpus sample.
 3. No other open work on this project — the redesign, MERIP addition, and nav bug are done
    and confirmed live.
-
-## History
-
-- 2026-09-04 — MERIP piece and the PMU-offices Amwaj piece added (`1bb0396`); merge-conflict
-  markers in `publications.html` removed (`cccc81c`); custom domain restored in the deploy
-  workflow (`454be69`); placeholder homepage template deleted (`473ae05`); Writing page split
-  into sections with a two-column grid (`e0a66ae`); 22 Amwaj pieces added at search-snippet
-  confidence (`c502655`); Home nav backdrop fixed (`13c5ec0`, `d2d6237`). All live.
