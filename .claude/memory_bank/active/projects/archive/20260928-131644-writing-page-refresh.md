@@ -93,5 +93,3 @@ All of the following is live on `arranwalshe.com/writing/` and deployed via the 
   workflow (`454be69`); placeholder homepage template deleted (`473ae05`); Writing page split
   into sections with a two-column grid (`e0a66ae`); 22 Amwaj pieces added at search-snippet
   confidence (`c502655`); Home nav backdrop fixed (`13c5ec0`, `d2d6237`). All live.
-- 2026-09-28 — Arran confirmed the Amwaj byline/URL spot-check is still wanted. Project
-  stays open until amwaj.media stops blocking automated fetches.
