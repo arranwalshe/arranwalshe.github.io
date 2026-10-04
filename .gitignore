@@ -1,2 +1,7 @@
 public/
 .DS_Store
+# inbox tasks are never committed: this repo is public
+inbox/*
+!inbox/README.md
+# Claude notes stay on the computer: this repo is public
+.claude/
