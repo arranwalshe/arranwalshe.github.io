@@ -11,49 +11,49 @@ url: "/writing/"
 
 "Iraq closes dozens of 'fake' PMU headquarters, but ambiguities remain." *Amwaj.media*. Aug. 14, 2026 [[link]](https://amwaj.media/en/media-monitor/iraq-closes-dozens-of-fake-pmu-headquarters-but-ambiguities-remain)
 
-"Erbil moves to turn over new leaf in Baghdad amid shrinking leverage." *Amwaj.media*. May 25, 2026 [[link]](https://amwaj.media/en/media-monitor/erbil-moves-to-turn-over-new-leaf-in-baghdad-amid-shrinking-leverage)
+"Erbil moves to turn over new leaf in Baghdad amid shrinking leverage." *Amwaj.media*. May 27, 2026 [[link]](https://amwaj.media/en/media-monitor/erbil-moves-to-turn-over-new-leaf-in-baghdad-amid-shrinking-leverage)
 
-"Baghdad faces trial by fire as reported drone strikes spark Gulf Arab fury." *Amwaj.media*. May 20, 2026 [[link]](https://amwaj.media/en/media-monitor/baghdad-faces-trial-by-fire-as-reported-drone-strikes-spark-gulf-arab-fury)
+"Baghdad faces trial by fire as drone strikes spark Gulf Arab fury." *Amwaj.media*. May 20, 2026 [[link]](https://amwaj.media/en/media-monitor/baghdad-faces-trial-by-fire-as-reported-drone-strikes-spark-gulf-arab-fury)
 
 "Most of Iraq's new cabinet approved in stormy parliamentary session." *Amwaj.media*. May 15, 2026 [[link]](https://amwaj.media/en/media-monitor/most-of-iraqs-new-cabinet-approved-in-stormy-parliamentary-session)
 
-"As talk of secret Israeli base rocks Iraq, Sudani seen as main victim." *Amwaj.media*. May 12, 2026 [[link]](https://amwaj.media/en/media-monitor/as-talk-of-secret-israeli-base-rocks-iraq-sudani-seen-as-main-victim)
+"As talk of secret Israeli base rocks Iraq, Sudani seen as main victim." *Amwaj.media*. May 13, 2026 [[link]](https://amwaj.media/en/media-monitor/as-talk-of-secret-israeli-base-rocks-iraq-sudani-seen-as-main-victim)
 
-"PM-designate Zaidi walks tightrope toward new Iraqi government." *Amwaj.media*. Apr. 30, 2026 [[link]](https://amwaj.media/en/media-monitor/pm-designate-zaidi-walks-tightrope-toward-new-iraqi-government)
+"PM-designate Zaidi walks tightrope toward new Iraqi government." *Amwaj.media*. May 9, 2026 [[link]](https://amwaj.media/en/media-monitor/pm-designate-zaidi-walks-tightrope-toward-new-iraqi-government)
 
-"US 'halts' physical petrodollars in bid to choke Iran's allies in Iraq." *Amwaj.media*. Apr. 21, 2026 [[link]](https://amwaj.media/en/media-monitor/us-halts-physical-petrodollars-in-bid-to-choke-irans-allies-in-iraq)
+"Parliamentary push to bring back conscription ignites debate in Iraq." *Amwaj.media*. Apr. 28, 2026 [[link]](https://amwaj.media/en/media-monitor/parliamentary-push-to-bring-back-conscription-ignites-debate-in-iraq)
 
-"Parliamentary push to bring back conscription ignites debate in Iraq." *Amwaj.media*. Apr. 15, 2026 [[link]](https://amwaj.media/en/media-monitor/parliamentary-push-to-bring-back-conscription-ignites-debate-in-iraq)
+"US 'halts' physical petrodollars in bid to choke Iran's allies in Iraq." *Amwaj.media*. Apr. 23, 2026 [[link]](https://amwaj.media/en/media-monitor/us-halts-physical-petrodollars-in-bid-to-choke-irans-allies-in-iraq)
 
-"Election of new president in Iraq signals crumbling Kurdish consensus." *Amwaj.media*. Apr. 11, 2026 [[link]](https://amwaj.media/en/media-monitor/election-of-new-president-in-iraq-signals-crumbling-kurdish-consensus)
+"Election of new Iraqi president signals crumbling Kurdish consensus." *Amwaj.media*. Apr. 16, 2026 [[link]](https://amwaj.media/en/media-monitor/election-of-new-president-in-iraq-signals-crumbling-kurdish-consensus)
 
-"Baghdad's authority in question after US journalist's capture and release." *Amwaj.media*. Apr. 8, 2026 [[link]](https://amwaj.media/en/media-monitor/baghdads-authority-in-question-after-us-journalists-capture-and-release)
+"Baghdad's authority in question after US journalist's capture and release." *Amwaj.media*. Apr. 9, 2026 [[link]](https://amwaj.media/en/media-monitor/baghdads-authority-in-question-after-us-journalists-capture-and-release)
 
-"Will parliamentary revolt end deadlock over government formation in Baghdad?" *Amwaj.media*. Mar. 30, 2026 [[link]](https://amwaj.media/en/media-monitor/will-parliamentary-revolt-end-deadlock-over-government-formation-in-baghdad)
+"Will parliamentary revolt end deadlock over government formation in Baghdad?" *Amwaj.media*. Apr. 3, 2026 [[link]](https://amwaj.media/en/media-monitor/will-parliamentary-revolt-end-deadlock-over-government-formation-in-baghdad)
 
-"Baghdad's new 'self-defense' mandate may formalize regionalization of Iran war." *Amwaj.media*. Mar. 25, 2026 [[link]](https://amwaj.media/en/media-monitor/baghdads-new-self-defense-mandate-may-formalize-regionalization-of-iran-war)
+"Baghdad's new 'self-defense' mandate may formalize regionalization of Iran War." *Amwaj.media*. Mar. 31, 2026 [[link]](https://amwaj.media/en/media-monitor/baghdads-new-self-defense-mandate-may-formalize-regionalization-of-iran-war)
 
-"Mediation nets lull in strikes on US embassy in Baghdad — but for how long?" *Amwaj.media*. Mar. 20, 2026 [[link]](https://amwaj.media/en/media-monitor/mediation-nets-lull-in-strikes-on-us-embassy-in-baghdad-but-for-how-long)
+"Iraq pivots north as Strait of Hormuz closure forces rethink on oil flows." *Amwaj.media*. Mar. 25, 2026 [[link]](https://amwaj.media/en/media-monitor/iraq-pivots-north-as-strait-of-hormuz-closure-forces-rethink-on-oil-flows)
 
-"Iraq pivots north as Strait of Hormuz closure forces rethink on oil flows." *Amwaj.media*. Mar. 19, 2026 [[link]](https://amwaj.media/en/media-monitor/iraq-pivots-north-as-strait-of-hormuz-closure-forces-rethink-on-oil-flows)
+"'Mediation' nets lull in strikes on US embassy in Baghdad, but for how long?" *Amwaj.media*. Mar. 21, 2026 [[link]](https://amwaj.media/en/media-monitor/mediation-nets-lull-in-strikes-on-us-embassy-in-baghdad-but-for-how-long)
 
-"Targeted assassinations bring Iran-Israel-US war to Baghdad's streets." *Amwaj.media*. Mar. 15, 2026 [[link]](https://amwaj.media/en/media-monitor/targeted-assassinations-bring-iran-israel-us-war-to-baghdads-streets)
+"Targeted assassinations bring Iran-Israel-US war to Baghdad's streets." *Amwaj.media*. Mar. 18, 2026 [[link]](https://amwaj.media/en/media-monitor/targeted-assassinations-bring-iran-israel-us-war-to-baghdads-streets)
 
 "Deep Dive: Mounting regional confrontation chokes Iraq's energy lifelines." *Amwaj.media*. Mar. 11, 2026 [[link]](https://amwaj.media/en/media-monitor/deep-dive-mounting-regional-confrontation-chokes-iraqs-energy-lifelines)
 
-"Iraq emerges as theater for war as mysterious landing, blackout ignite rumors." *Amwaj.media*. Mar. 8, 2026 [[link]](https://amwaj.media/en/media-monitor/iraq-emerges-as-theater-for-war-as-mysterious-landing-blackout-ignite-rumors)
+"Dark clouds over Iraqi civil society after killing of prominent feminist." *Amwaj.media*. Mar. 10, 2026 [[link]](https://amwaj.media/en/media-monitor/dark-clouds-over-iraqi-civil-society-after-killing-of-prominent-feminist)
 
-"Dark clouds over Iraqi civil society after killing of prominent feminist." *Amwaj.media*. Mar. 3, 2026 [[link]](https://amwaj.media/en/media-monitor/dark-clouds-over-iraqi-civil-society-after-killing-of-prominent-feminist)
+"Iraq emerges as theater for war as mysterious landing, blackout ignite rumors." *Amwaj.media*. Mar. 9, 2026 [[link]](https://amwaj.media/en/media-monitor/iraq-emerges-as-theater-for-war-as-mysterious-landing-blackout-ignite-rumors)
 
-"Iraq braces for escalation amid fears of fallout from Iran-Israel-US war." *Amwaj.media*. Mar. 1, 2026 [[link]](https://amwaj.media/en/media-monitor/iraq-braces-for-escalation-amid-fears-of-fallout-from-iran-israel-us-war)
+"Dispute over maritime boundary reignites as Iraq submits new maps to UN." *Amwaj.media*. Mar. 5, 2026 [[link]](https://amwaj.media/en/media-monitor/dispute-over-maritime-boundary-reignites-as-iraq-submits-new-maps-to-un)
 
-"Iran lashes out across region after renewed Israeli-US attack." *Amwaj.media*. Feb. 28, 2026 [[link]](https://amwaj.media/en/media-monitor/iran-lashes-out-across-region-after-renewed-israeli-us-attack)
+"Iraq braces for escalation amid fears of fallout from Iran-Israel-US war." *Amwaj.media*. Mar. 2, 2026 [[link]](https://amwaj.media/en/media-monitor/iraq-braces-for-escalation-amid-fears-of-fallout-from-iran-israel-us-war)
 
-"Deep Dive: Security chiefs re-emerge as top contenders to lead Iraq." *Amwaj.media*. Feb. 27, 2026 [[link]](https://amwaj.media/en/article/deep-dive-security-chiefs-re-emerge-as-top-contenders-to-lead-iraq)
+"Iran lashes out across region after renewed Israeli-US attack." *Amwaj.media*. Mar. 1, 2026 [[link]](https://amwaj.media/en/media-monitor/iran-lashes-out-across-region-after-renewed-israeli-us-attack)
+
+"Deep Dive: Security chiefs re-emerge as top contenders to lead Iraq." *Amwaj.media*. Feb. 26, 2026 [[link]](https://amwaj.media/en/article/deep-dive-security-chiefs-re-emerge-as-top-contenders-to-lead-iraq)
 
 "Under US pressure, Iraq's ruling Shiite alliance edges towards break with Maliki." *Amwaj.media*. Feb. 24, 2026 [[link]](https://amwaj.media/en/media-monitor/under-us-pressure-iraqs-ruling-shiite-alliance-edges-towards-break-with-maliki)
-
-"Dispute over maritime boundary reignites as Iraq submits new maps to UN." *Amwaj.media*. Feb. 24, 2026 [[link]](https://amwaj.media/en/media-monitor/dispute-over-maritime-boundary-reignites-as-iraq-submits-new-maps-to-un)
 
 ### 2025
 
