@@ -10,7 +10,8 @@ off; and the monthly update publishes on its own. The source is the career recor
 Amwaj-Automations repo (core/record.md, rows whose role is "wrote"), read from its GitHub copy
 (git fetch, then git show origin/main), never from a working tree. Only adds: an entry already on
 the page (matched by its link) is left exactly as it is, and nothing is ever removed or reordered.
-New entries go under News Analysis, in their year, in date order, written like the others:
+New entries go in their tab (Articles & Deep Dives, or Media Monitors: see tab()), in their year, in
+date order, written like the others:
     Arran Robert Walshe, "Title." <i>Amwaj.media</i>. Mon. D, YYYY <a href="URL">[link]</a>
 
 Run monthly on the Air by launchd (scripts/install-air-sync), the day after the career-record job.
@@ -40,14 +41,15 @@ def git(repo, *args, check=True):
 
 
 def written_rows(record_text):
-    """Rows of the record where Arran's role is 'wrote': {date, title, url}."""
+    """Rows of the record where Arran's role is 'wrote': {date, title, format, url}."""
     rows = []
     for line in record_text.splitlines():
         if not line.startswith("| 20"):
             continue
         cells = [c.strip() for c in line.strip().strip("|").split("|")]
         if len(cells) >= 6 and cells[3] == "wrote":
-            rows.append({"date": datetime.date.fromisoformat(cells[0]), "title": cells[1], "url": cells[5]})
+            rows.append({"date": datetime.date.fromisoformat(cells[0]), "title": cells[1],
+                         "format": cells[4], "url": cells[5]})
     return rows
 
 
@@ -80,19 +82,36 @@ def entry_date(p_html):
     return datetime.date(int(m.group(3)), names[mon], int(m.group(2)))
 
 
+def tab(row):
+    """Which tab a piece goes in (Arran, 2026-11-05: the page is organised by kind of work).
+    Articles & Deep Dives: the record's format Article, Deep Dive, Inside Story or Interview, a
+    "Deep Dive:" title, or an /article/ address. Everything else (Media Monitors): Media Monitors."""
+    if (row.get("format") in ("Article", "Deep Dive", "Inside Story", "Interview")
+            or row["title"].startswith("Deep Dive") or "/article/" in row["url"]):
+        return "articles"
+    return "monitors"
+
+
 def add_entries(page, rows):
-    """Return (new page text, rows added). Only News Analysis is touched."""
-    start = page.index('<div id="news" class="section-content"')
-    end = page.index('<div class="section-container">', start)
-    news = page[start:end]
-    present = {norm(u) for u in re.findall(r'href="([^"]+)"', news)}
+    """Return (new page text, rows added). Only the Articles & Deep Dives and Media Monitors tabs are
+    touched; a piece already anywhere on the page (by link) is skipped."""
+    present = {norm(u) for u in re.findall(r'href="([^"]+)"', page)}
     todo = sorted((r for r in rows if norm(r["url"]) not in present), key=lambda r: r["date"], reverse=True)
+    for row in todo:
+        start = page.index(f'<div id="{tab(row)}" class="section-content"')
+        end = page.index('<div class="section-container">', start)
+        page = page[:start] + insert(page[start:end], row) + page[end:]
+    return page, todo
+
+
+def insert(news, row):
+    """Put one entry into a tab's region, in its year, in date order."""
     indent = "                    "
     def list_end(text):
-        # The region ends "...</p>\n  </div>\n  </div>\n": the news list closes at the second-last </div>.
+        # The region ends "...</p>\n  </div>\n  </div>\n": the list closes at the second-last </div>.
         return text.rfind("</div>", 0, text.rfind("</div>"))
 
-    for row in todo:
+    for row in [row]:
         year = str(row["date"].year)
         heading = f'<h4 class="year-heading">{year}</h4>'
         if heading not in news:
@@ -118,7 +137,7 @@ def add_entries(page, rows):
             news = news[:at] + "\n\n" + indent + text + news[at:]
         else:
             news = news[:insert_at] + text + "\n\n" + indent + news[insert_at:]
-    return page[:start] + news + page[end:], todo
+    return news
 
 
 def read_record():

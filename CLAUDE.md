@@ -24,8 +24,9 @@ Inbox tasks for this repo are local too. Send them from the Air, or to Hub.
 Since 2026-11-05 (Arran: the page "should have everything I've written"; pieces he only edited stay
 off; and the update "should push automatically"). `scripts/sync_publications.py` reads the career
 record kept by Amwaj-Automations (`core/record.md`, rows with role "wrote", from its GitHub copy) and
-adds any piece not yet under News Analysis in `layouts/writing/single.html`, in its year, in date
-order. It only adds: entries already there (matched by link, with or without `/en/`) are never
+adds any piece not yet on the page to its tab in `layouts/writing/single.html` (Articles & Deep
+Dives, or Media Monitors; the page is organised by kind of work since 2026-11-05), in its year, in
+date order. It only adds: entries already there (matched by link, with or without `/en/`) are never
 changed or removed. A launchd job on the Air runs it with `--publish` on the 2nd of each month at
 13:05 (`scripts/install-air-sync`), which commits that one file and pushes, so it **publishes the
 site without asking**: the one standing exception to "a push here is Arran's to make". Tests:
