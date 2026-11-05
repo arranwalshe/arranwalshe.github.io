@@ -87,6 +87,11 @@ class Sync(unittest.TestCase):
         again, added = sp.add_entries(self.page, sp.written_rows(RECORD))
         self.assertEqual((again, added), (self.page, []))
 
+    def test_media_monitor_address_wins_over_deep_dive_title(self):
+        row = {"title": "Deep Dive: Mounting regional confrontation", "format": "Deep Dive",
+               "url": "https://amwaj.media/en/media-monitor/deep-dive-mounting"}
+        self.assertEqual(sp.tab(row), "monitors")
+
     def test_old_link_without_en_counts_as_present(self):
         page = PAGE.replace('href="https://amwaj.media/b"', 'href="https://amwaj.media/media-monitor/will-x"')
         rec = "| 2026-05-27 | May piece | Amwaj.media | wrote | Media Monitor | https://amwaj.media/en/media-monitor/will-x |\n"

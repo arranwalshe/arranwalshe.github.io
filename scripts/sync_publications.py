@@ -84,8 +84,12 @@ def entry_date(p_html):
 
 def tab(row):
     """Which tab a piece goes in (Arran, 2026-11-05: the page is organised by kind of work).
-    Articles & Deep Dives: the record's format Article, Deep Dive, Inside Story or Interview, a
-    "Deep Dive:" title, or an /article/ address. Everything else (Media Monitors): Media Monitors."""
+    The Amwaj address decides first: a /media-monitor/ page is a Media Monitor even when its title
+    starts "Deep Dive:" (Arran, 2026-11-05, on "Deep Dive: Mounting regional confrontation chokes
+    Iraq's energy lifelines"). Otherwise Articles & Deep Dives: the record's format Article, Deep
+    Dive, Inside Story or Interview, a "Deep Dive:" title, or an /article/ address."""
+    if "/media-monitor/" in row["url"]:
+        return "monitors"
     if (row.get("format") in ("Article", "Deep Dive", "Inside Story", "Interview")
             or row["title"].startswith("Deep Dive") or "/article/" in row["url"]):
         return "articles"
