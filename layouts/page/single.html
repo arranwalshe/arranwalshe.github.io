@@ -1,6 +1,6 @@
 {{ define "main" }}
 <!-- TEMPLATE A: page/single.html -->
-{{ if or (eq .RelPermalink "/publications/") (eq .RelPermalink "/writing/") }}
+{{ if eq .RelPermalink "/writing/" }}
     <!-- Writing page layout -->
     <div style="width: 100vw; margin-left: calc(-50vw + 50%); margin-right: calc(-50vw + 50%); background-color: black;">
         <nav role="navigation" style="position: fixed; top: 0; left: 0; right: 0; background-color: black; z-index: 1000; padding: 1rem;">
