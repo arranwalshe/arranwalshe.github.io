@@ -18,10 +18,10 @@
     <div style="max-width: 100%; margin: 0; padding-top: 10vh;">
         <div class="headers-container" style="padding-left: 4vw;">
             <div class="section-container">
-                <h2 onclick="toggleSection('news')" style="color: white; font-size: 1.4rem; margin: 0; cursor: pointer;">
+                <h2 class="section-title open" onclick="toggleSection('news')" style="color: white; font-size: 1.4rem; margin: 0; cursor: pointer;">
                     News Analysis
                 </h2>
-                <div id="news" class="section-content" style="display: none;">
+                <div id="news" class="section-content" style="display: grid;">
                     <h4 class="year-heading">2026</h4>
                     <p>Arran Robert Walshe, "Iraq closes dozens of 'fake' PMU headquarters, but ambiguities remain." <i>Amwaj.media</i>. Aug. 14, 2026 <a href="https://amwaj.media/en/media-monitor/iraq-closes-dozens-of-fake-pmu-headquarters-but-ambiguities-remain">[link]</a></p>
 
@@ -182,7 +182,7 @@
             </div>
 
             <div class="section-container">
-                <h2 onclick="toggleSection('books')" style="color: white; font-size: 1.4rem; margin: 0; cursor: pointer;">
+                <h2 class="section-title" onclick="toggleSection('books')" style="color: white; font-size: 1.4rem; margin: 0; cursor: pointer;">
                     Book Chapters
                 </h2>
                 <div id="books" class="section-content" style="display: none;">
@@ -191,7 +191,7 @@
             </div>
 
             <div class="section-container">
-                <h2 onclick="toggleSection('features')" style="color: white; font-size: 1.4rem; margin: 0; cursor: pointer;">
+                <h2 class="section-title" onclick="toggleSection('features')" style="color: white; font-size: 1.4rem; margin: 0; cursor: pointer;">
                     Features & Essays
                 </h2>
                 <div id="features" class="section-content" style="display: none;">
@@ -217,6 +217,15 @@
 
 .section-container {
     position: static;
+}
+
+/* A section's title is bold while its list is open (Arran, 2026-11-05) */
+.section-title {
+    font-weight: 400;
+}
+
+.section-title.open {
+    font-weight: 700;
 }
 
 .section-content {
@@ -291,6 +300,14 @@ function toggleSection(sectionId) {
 
     // Toggle the clicked section
     section.style.display = section.style.display === 'none' ? 'grid' : 'none';
+
+    // Bold the title of the open section only
+    for (let title of document.getElementsByClassName('section-title')) {
+        title.classList.remove('open');
+    }
+    if (section.style.display !== 'none') {
+        section.previousElementSibling.classList.add('open');
+    }
 }
 
 // Nav stays transparent over the hero photo at rest, but needs a backdrop
