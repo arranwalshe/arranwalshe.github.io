@@ -1,0 +1,47 @@
+#!/bin/zsh
+# Install the monthly Writing-page sync on the MacBook Air (scripts/sync_publications.py --publish).
+#
+#   scripts/install-air-sync            install or refresh the launchd job
+#   scripts/install-air-sync --remove   remove it
+#
+# Runs on the 2nd of each month at 13:05, the day after Amwaj's career-record job (1st, 11:00, on
+# the mini) commits and pushes the record. If the Air is asleep then, launchd runs it at the next
+# wake. It publishes the site (Arran, 2026-11-05: "it should push automatically"). Air only: this
+# repo's work stays on the Air (CLAUDE.md). Log: ~/Library/Logs/website-publications-sync.log
+set -euo pipefail
+LABEL=com.arran.website.publications-sync
+PLIST="$HOME/Library/LaunchAgents/$LABEL.plist"
+SITE="$HOME/codes/arranwalshe.com"
+
+if [[ "${1:-}" == "--remove" ]]; then
+  launchctl bootout "gui/$(id -u)/$LABEL" 2>/dev/null || true
+  rm -f "$PLIST"
+  echo "removed $LABEL"
+  exit 0
+fi
+[[ "$(id -un)" == awalshe ]] || { echo "this is for the MacBook Air (user awalshe); stopping"; exit 1; }
+
+cat > "$PLIST" <<EOF
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0"><dict>
+  <key>Label</key><string>$LABEL</string>
+  <key>ProgramArguments</key><array>
+    <string>/usr/bin/python3</string><string>$SITE/scripts/sync_publications.py</string><string>--publish</string>
+  </array>
+  <key>WorkingDirectory</key><string>$SITE</string>
+  <key>EnvironmentVariables</key><dict><key>PATH</key><string>/usr/bin:/bin:/usr/sbin:/sbin</string></dict>
+  <key>StartCalendarInterval</key><dict>
+    <key>Day</key><integer>2</integer><key>Hour</key><integer>13</integer><key>Minute</key><integer>5</integer>
+  </dict>
+  <key>StandardOutPath</key><string>$HOME/Library/Logs/website-publications-sync.log</string>
+  <key>StandardErrorPath</key><string>$HOME/Library/Logs/website-publications-sync.log</string>
+</dict></plist>
+EOF
+launchctl bootout "gui/$(id -u)/$LABEL" 2>/dev/null || true
+for try in 1 2 3 4 5; do
+  launchctl bootstrap "gui/$(id -u)" "$PLIST" 2>/dev/null && break
+  [[ $try == 5 ]] && { echo "could not load $LABEL"; exit 1; }
+  sleep 2
+done
+echo "installed $LABEL: monthly on the 2nd at 13:05"
