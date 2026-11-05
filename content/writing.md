@@ -175,6 +175,6 @@ url: "/writing/"
 
 "Alternative Amman—Making Counterculture in the Jordanian Capital." *MERIP*. Aug. 20, 2026 [[link]](https://www.merip.org/2026/08/alternative-amman-making-counterculture-in-the-jordanian-capital/)
 
-"Water Be a String" in *Is al-Andalus a Place or a Poem?* Edited & Illustrated by Molly Crabapple. New York University. NY, New York [[link]](/docs/water.pdf)
+"Water Be a String" in *Is al-Andalus a Place or a Poem?* Edited & Illustrated by Molly Crabapple. New York University. NY, New York [[link]](/docs/Water.pdf)
 
 "The Mango Juice is a Needle, and We're the Thread; or, the Non-Transactional Ethics of Iraqi Karam." *Globally Rooted Magazine*. Issue 2, May 2023 [[link]](https://globallyrooted.com/arran-walshe-the-mango-juice-is-a-needle-and-we-are-the-thread)
